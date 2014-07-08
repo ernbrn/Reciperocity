@@ -10,7 +10,6 @@
        :aws_secret_access_key  => Rails.application.secrets.aws_secret_key
    }
    config.fog_directory = 'reciperocity'
-
   else
    config.storage = :file
   end
