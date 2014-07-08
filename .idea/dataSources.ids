@@ -3,4 +3,10 @@
   <data-source source="LOCAL" name="Rails Reciperocity: development" uuid="d8dfcd70-24a7-4fea-ba54-5f9cfd40bfa2">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails Reciperocity: test" uuid="020d40af-596e-4397-b15a-3a82c385d26a">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails Reciperocity: production" uuid="7442c270-f447-4a58-9808-3c7160a2daf7">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

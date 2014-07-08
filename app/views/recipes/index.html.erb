@@ -1,4 +1,4 @@
-<h1>Listing recipes</h1>
+<h1>Listing  recipes</h1>
 
 <table>
   <thead>
@@ -11,7 +11,11 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.dish_name %><br></td>
+        <td><%= recipe.ingredient_list %><br></td>
+        <td><%= recipe.prep_time %><br></td>
+        <td><%= recipe.cook_time %><br></td>
         <td><%= recipe.instructions  %><br></td>
+        <td><%= recipe.yield %><br></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
