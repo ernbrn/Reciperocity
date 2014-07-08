@@ -17,6 +17,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def tag
+    @tag = params[:tag]
+    @recipes = @recipes.tagged_with(@tag)
+  end
+
   # GET /recipes/1/edit
   def edit
   end
@@ -69,6 +74,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:dish_name, :instructions, :picture)
+      params.require(:recipe).permit(:dish_name, :instructions, :prep_time, :cook_time, :ingredient_list, :yield, :picture, :tag_list)
     end
 end
