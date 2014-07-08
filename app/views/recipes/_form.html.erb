@@ -15,10 +15,29 @@
       <%= f.label :dish_name %>
       <%= f.text_field :dish_name %>
     </div>
+    <div class="field">
+      <%= f.label :ingredient_list %>
+      <%= f.text_area :ingredient_list %>
+    </div>
 
     <div class="field">
       <%= f.label :instructions %>
       <%= f.text_area :instructions %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prep_time %>
+      <%= f.text_field :prep_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cook_time %>
+      <%= f.text_field :cook_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :yield %>
+      <%= f.text_field :yield %>
     </div>
   <div class="actions">
     <%= f.submit %>
