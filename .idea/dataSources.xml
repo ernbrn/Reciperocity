@@ -18,7 +18,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:reciperocity_production</jdbc-url>
       <user-name>reciperocity</user-name>
-      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffedfefdff9dffedfebdffadffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfefdfe9dfe3dffadfefdff8dfe5dfe9dfe3dffedff3dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
       <libraries />
     </data-source>
   </component>
