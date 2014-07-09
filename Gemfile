@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'kramdown'
 gem 'mini_magick'
 gem 'pg'
+gem 'postmark-rails'
 gem 'rails', '4.1.1'
 gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 4.0.3'

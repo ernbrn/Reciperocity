@@ -1,6 +1,8 @@
 <div class="row">
   <div class="medium-12 columns">
-<h3>Recipies tagged with <%=@tag%></h3>
+<h3>Recipes tagged with <%=@tag%></h3>
 <%= render :partial => 'recipes' %>
->  </div>
+  </div>
+
+  <%= link_to "Back home", root_path %>
 </div>

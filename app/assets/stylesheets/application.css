@@ -17,7 +17,10 @@
 
 .custom-label-class {
 @include label();
-    background: orangered;
-    color: white;
+    background: #ff822a;
+    -webkit-border-radius: 20%;
+}
+#tag{
+    color: black;
 }
 

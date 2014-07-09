@@ -24,10 +24,8 @@
       <td><%= recipe.instructions %><br></td>
       <td><%= recipe.yield %><br></td>
       <td><% recipe.tags.each do |tag|%>
-              <span class="custom-label-class">
-              <%= link_to tag, tag_recipes_path(tag.name) %>
-        <% end %>
-        </span>
+              <%= link_to tag, tag_recipes_path(tag.name), class:"custom-label-class", id:'tag' %>
+      <% end %>
       </td>
 
       <td><%= image_tag (recipe.picture) %><br></td>
