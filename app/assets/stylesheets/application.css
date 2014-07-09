@@ -15,4 +15,9 @@
  *= require foundation
  */
 
+.custom-label-class {
+@include label();
+    background: orangered;
+    color: white;
+}
 

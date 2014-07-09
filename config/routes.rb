@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 resources :users
-resources :recipes
+resources :recipes do
+  get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag
+end
 
   # You can have the root of your site routed with "root"
   root 'recipes#index'

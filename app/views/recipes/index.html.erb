@@ -9,30 +9,12 @@
       <td>Cook Time</td>
       <td>Instructions</td>
       <td>Yield</td>
+      <td>Tags</td>
       <td>Picture</td>
 
     </tr>
   </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.dish_name %><br></td>
-        <td><%= recipe.ingredient_list %><br></td>
-        <td><%= recipe.prep_time %><br></td>
-        <td><%= recipe.cook_time %><br></td>
-        <td><%= recipe.instructions %><br></td>
-        <td><%= recipe.yield %><br></td>
-        <td><%= recipe.tag_list %><br></td>
-
-        <td><%= image_tag (recipe.picture) %><br></td>
-
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%= render :partial => 'recipes' %>
 </table>
 
 <br>
