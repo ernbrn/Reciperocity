@@ -1,4 +1,20 @@
-<tbody>
+
+
+<table>
+  <thead>
+  <tr>
+    <td>Dish Name</td>
+    <td>Ingredients</td>
+    <td>Prep Time</td>
+    <td>Cook Time</td>
+    <td>Instructions</td>
+    <td>Yield</td>
+    <td>Tags</td>
+    <td>Picture</td>
+
+  </tr>
+  </thead>
+  <tbody>
 <% @recipes.each do |recipe| %>
     <tr>
       <td><%= recipe.dish_name %><br></td>
@@ -22,3 +38,4 @@
     </tr>
 <% end %>
 </tbody>
+</table>

@@ -17,9 +17,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  def tag
+  def tags
     @tag = params[:tag]
-    @recipes = @recipes.tagged_with(@tag)
+    @recipes = Recipe.tagged_with(@tag).includes(:tags)
   end
 
   # GET /recipes/1/edit
