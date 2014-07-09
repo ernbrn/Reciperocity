@@ -17,7 +17,7 @@
         <td><%= link_to 'Sign out forever', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Sign out for now', destroy_user_session_path, :method => :delete %></td>
 
-        <td><%= link_to 'Recipes!', root_path %></td>
+        <td></td>
 
 
 
@@ -25,6 +25,6 @@
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'Recipes!', root_path %>
 <br>
 
