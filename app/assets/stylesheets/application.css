@@ -16,7 +16,6 @@
  */
 
 .custom-label-class {
-@include label();
     background: #ff822a;
     -webkit-border-radius: 20%;
 }
