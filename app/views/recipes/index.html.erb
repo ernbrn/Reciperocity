@@ -5,8 +5,9 @@
   </div>
 
 <body>
-
+<div class="row">
   <%= render :partial => 'recipes', :object => @recipes %>
+  </div>
 <div class="row">
   <div class="large-4 columns large-centered" id="cutlery">
   <%= link_to content_tag(:i, nil, class: "fa fa-cutlery fa-5x"), new_recipe_path %>
