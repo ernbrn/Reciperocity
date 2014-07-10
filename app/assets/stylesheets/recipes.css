@@ -1,13 +1,25 @@
+
 .recipe-pic{
-    postion: relative;
+    postion: absolute;
     border-radius: 20%;
+    vertical-align: middle;
 }
 
 .page-title {
     font-family: 'Satisfy', cursive;
-    margin: 20px;   
+    text-align: center;
+
+}
+
+.recipe-link{
+    font-family: 'Architects Daughter', cursive;
+    color: #0078a0;
 }
 
 #recipe-block{
     margin: 70px;
+}
+
+#ingredients{
+    margin: 90px;
 }

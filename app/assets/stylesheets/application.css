@@ -22,7 +22,7 @@ body{
     background-image: image-url('45degree_fabric/45degree_fabric.png');
 }
 .custom-label-class {
-    background: #ff822a;
+    background: powderblue;
     -webkit-border-radius: 20%;
 }
 #tag{

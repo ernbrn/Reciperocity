@@ -1,6 +1,36 @@
-<p id="notice"><%= notice %></p>
+<body>
+<div class="row">
+<div class="large-5 columns large-center" id="recipe-block">
+        <strong>
+          <h1 class="recipe-link"><%=@recipe.dish_name%><br></h1>
+        </strong>
+        <%= image_tag(@recipe.picture, class: "recipe-pic") %><br>
+
+        <% @recipe.tags.each do |tag|%>
+
+            <%= link_to tag, tag_recipes_path(tag.name), class:"custom-label-class", id:'tag' %>
+        <% end %>
+        <br>
+        <br>
 
 
+
+  </div>
+<div class="row" id="ingredients">
+  <h3 class="recipe-link">Ingredients:</h3>
+  <%=@recipe.ingredient_list%>
+  <h3 class="recipe-link">Instructions:</h3>
+  <%=@recipe.instructions%>
+  <h3 class="recipe-link">Prep Time:</h3>
+  <%=@recipe.prep_time%>
+  <h3 class="recipe-link">Cook Time:</h3>
+  <%=@recipe.cook_time%>
+  <h3 class="recipe-link">Yield:</h3>
+  <%=@recipe.yield%>
+
+</div>
+</div>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
+</body>
