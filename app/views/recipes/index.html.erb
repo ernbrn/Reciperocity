@@ -1,10 +1,14 @@
-<h1>Listing  recipes</h1>
+<div class="row">
+  <div class="large-4 large-centered columns">
+<h1 class="page-title">Reciperocity</h1>
+  </div>
+  </div>
 
+<body>
 
-  <%= render :partial => 'recipes' %>
+  <%= render :partial => 'recipes', :object => @recipes %>
 
 <%= link_to 'Log a new recipe!', new_recipe_path %>
 <br>
 
-
-
+</body>

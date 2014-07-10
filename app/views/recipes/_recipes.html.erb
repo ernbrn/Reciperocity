@@ -1,39 +1,20 @@
+<div class="large-12 columns large-center" id="recipe-block">
+    <ul class="large-block-grid-4">
+    <% recipes.each do |recipe| %>
+      <strong>
+     <li> <%= link_to recipe.dish_name, recipe, class:"recipe-link"%><br>
+      </strong>
+         <%= link_to image_tag(recipe.picture, class: "recipe-pic"), recipe %><br>
 
+            <% recipe.tags.each do |tag|%>
 
-<table>
-  <thead>
-  <tr>
-    <td>Dish Name</td>
-    <td>Ingredients</td>
-    <td>Prep Time</td>
-    <td>Cook Time</td>
-    <td>Instructions</td>
-    <td>Yield</td>
-    <td>Tags</td>
-    <td>Picture</td>
-
-  </tr>
-  </thead>
-  <tbody>
-<% @recipes.each do |recipe| %>
-    <tr>
-      <td><%= recipe.dish_name %><br></td>
-      <td><%= recipe.ingredient_list %><br></td>
-      <td><%= recipe.prep_time %><br></td>
-      <td><%= recipe.cook_time %><br></td>
-      <td><%= recipe.instructions %><br></td>
-      <td><%= recipe.yield %><br></td>
-      <td><% recipe.tags.each do |tag|%>
-              <%= link_to tag, tag_recipes_path(tag.name), class:"custom-label-class", id:'tag' %>
+     <%= link_to tag, tag_recipes_path(tag.name), class:"custom-label-class", id:'tag' %>
       <% end %>
-      </td>
+       <br>
+        <br>
 
-      <td><%= image_tag (recipe.picture) %><br></td>
 
-      <td><%= link_to 'Show', recipe %></td>
-      <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-      <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
 <% end %>
-</tbody>
-</table>
+      </li>
+    </ul>
+</div>

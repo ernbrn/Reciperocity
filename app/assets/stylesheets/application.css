@@ -12,9 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  *= require foundation
  */
 
+@import url(http://fonts.googleapis.com/css?family=Crafty+Girls|Indie+Flower|Architects+Daughter|Satisfy);
+body{
+    background-image: image-url('45degree_fabric/45degree_fabric.png');
+}
 .custom-label-class {
     background: #ff822a;
     -webkit-border-radius: 20%;
@@ -22,4 +28,6 @@
 #tag{
     color: black;
 }
+
+
 

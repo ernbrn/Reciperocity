@@ -30,6 +30,7 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = current_user.id
 
     respond_to do |format|
       if @recipe.save
@@ -77,3 +78,4 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:dish_name, :instructions, :prep_time, :cook_time, :ingredient_list, :yield, :picture, :tag_list, :user_id)
     end
 end
+

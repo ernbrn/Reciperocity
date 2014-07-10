@@ -1,0 +1,13 @@
+.recipe-pic{
+    postion: relative;
+    border-radius: 20%;
+}
+
+.page-title {
+    font-family: 'Satisfy', cursive;
+    margin: 20px;   
+}
+
+#recipe-block{
+    margin: 70px;
+}

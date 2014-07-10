@@ -1,7 +1,7 @@
 <div class="row">
   <div class="medium-12 columns">
 <h3>Recipes tagged with <%=@tag%></h3>
-<%= render :partial => 'recipes' %>
+<%= render :partial => 'recipes', :object => @recipes %>
   </div>
 
   <%= link_to "Back home", root_path %>
