@@ -21,10 +21,12 @@
 
 #recipe-block{
     margin: 70px;
+    height: 100%;
 }
 
 #ingredients{
     margin: 90px;
+    height: 100%;
 }
 
 #cutlery{
