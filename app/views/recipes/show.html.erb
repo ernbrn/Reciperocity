@@ -29,6 +29,6 @@
 </div>
 <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
 <%= link_to content_tag(:i, nil, class:"fa fa-pencil fa-4x"), edit_recipe_path(@recipe), class:"toggles" %>
-<td><%= link_to 'Sign out forever', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to 'Sign out forever', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 </body>
