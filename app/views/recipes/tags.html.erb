@@ -4,5 +4,5 @@
 <%= render :partial => 'recipes', :object => @recipes %>
   </div>
 
-  <%= link_to "Back home", root_path, class:'recipe-link' %>
+  <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
 </div>
