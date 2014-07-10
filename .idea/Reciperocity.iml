@@ -146,6 +146,7 @@
     <orderEntry type="library" scope="PROVIDED" name="fog-brightbox (v0.1.1, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-core (v1.22.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-json (v1.0.0, rbenv: 2.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="font-awesome-sass (v4.1.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="formatador (v0.2.5, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="foundation-rails (v5.2.3.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 2.1.2) [gem]" level="application" />

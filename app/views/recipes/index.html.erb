@@ -7,8 +7,10 @@
 <body>
 
   <%= render :partial => 'recipes', :object => @recipes %>
-
-<%= link_to 'Log a new recipe!', new_recipe_path %>
-<br>
-
+<div class="row">
+  <div class="large-4 columns large-centered" id="cutlery">
+  <%= link_to content_tag(:i, nil, class: "fa fa-cutlery fa-5x"), new_recipe_path %>
+  <br>
+  </div>
+    </div>
 </body>
