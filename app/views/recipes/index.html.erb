@@ -5,14 +5,31 @@
   </div>
 
 <body>
-<div class="row">
+<div class="row" id="index-partial">
+  <div class="large-12 large-centered columns">
   <%= render :partial => 'recipes', :object => @recipes %>
+  </div>
   </div>
 <div class="row">
   <div class="large-4 columns large-centered" id="cutlery">
-  <%= link_to content_tag(:i, nil, class: "fa fa-cutlery fa-5x"), new_recipe_path %>
+    <%= link_to content_tag(:i, nil, class: "fa fa-child fa-5x"), "#", data: {:'reveal-id' => 'user-modal'} %><br><br><br>
+
+
+    <%= link_to content_tag(:i, nil, class: "fa fa-cutlery fa-5x"), "#", data: {:'reveal-id' => 'recipe-modal'} %>
     <!--TODO fix this formatting-->
   <br>
   </div>
     </div>
+
+<div id="user-modal" class="reveal-modal" data-reveal>
+  <h2>User Settings Here</h2>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+</body>
+
+<div id="recipe-modal" class="reveal-modal" data-reveal>
+  <h2>New Recipe</h2>
+  <%= render partial: 'form', object: @recipe%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 </body>

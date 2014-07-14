@@ -1,16 +1,17 @@
+<body class="fonts">
+<div class="large-6 large-centered columns">
 <%= form_for(@recipe) do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
       <ul>
-      <% @recipe.errors.full_messages.each do |message| %>
+      <% recipe.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
     <div class="field">
       <%= f.label :dish_name %>
       <%= f.text_field :dish_name %>
@@ -45,12 +46,15 @@
       <%= f.text_field :tag_list %>
     </div>
 
-
     <div class="field">
       <%= f.label :picture %>
       <%= f.file_field :picture %>
     </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="action">
+    <%= f.submit "Make Recipe", class: "button" %>
   </div>
+      </div>
+
 <% end %>
+</body>

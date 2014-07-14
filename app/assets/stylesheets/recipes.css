@@ -16,7 +16,7 @@
     color: #0078a0;
 }
 .toggles{
-    margin: 30px;
+    margin-left: 20px;
 }
 
 #recipe-block{
@@ -28,10 +28,13 @@
     margin-top: 30px;
     height: 100%;
 }
+#index-partial{
+    position: relative;
+}
 
 #cutlery{
-   position:relative;
-    bottom: 100px;
+    position: fixed;
+    bottom: 200px;
     left: 100px;
 }
 

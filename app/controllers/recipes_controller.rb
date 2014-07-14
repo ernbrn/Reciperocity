@@ -12,6 +12,11 @@ class RecipesController < ApplicationController
   def show
   end
 
+  def index
+    @recipe = Recipe.new
+    @recipes = Recipe.all
+  end
+
   # GET /recipes/new
   def new
     @recipe = Recipe.new
