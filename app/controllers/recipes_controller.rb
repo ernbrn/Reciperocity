@@ -15,6 +15,8 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new
     @recipes = Recipe.all
+    @user = User.new
+    @users = User.all
   end
 
   # GET /recipes/new
