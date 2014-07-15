@@ -8,8 +8,16 @@ resources :recipes do
   get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag
 end
 
+
+
   # You can have the root of your site routed with "root"
   root 'recipes#index'
+
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      resources :recipes
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
