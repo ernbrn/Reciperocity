@@ -3,11 +3,11 @@ class API::V1::RecipesController < ApplicationController
   respond_to :json
 
   def index
-    respond_with @recipes = Recipe.all
+     @recipes = Recipe.all
   end
 
   def show
-    respond_with Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def create
