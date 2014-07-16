@@ -4,4 +4,3 @@ json.(recipe, :ingredient_list, :prep_time, :cook_time, :instructions, :yield, :
 
 
 
-# TODO add host to URL
