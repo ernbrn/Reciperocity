@@ -3,10 +3,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   # GET /recipes.json
-  def index
-    @recipes = Recipe.all
-  end
-
   # GET /recipes/1
   # GET /recipes/1.json
   def show
@@ -42,10 +38,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
-        format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,10 +50,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
   end

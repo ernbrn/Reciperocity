@@ -3,7 +3,7 @@ class API::V1::RecipesController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Recipe.all
+    respond_with @recipes = Recipe.all
   end
 
   def show
