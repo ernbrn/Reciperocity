@@ -5,4 +5,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :recipes
+  has_many :authentications
+
+
+  def apply_omniauth(omniauth)
+    authentications.build(:provider => auth_hash['provider'], :uid => auth_hash['uid'])
+  end
+
+  def password_required?
+    (authentications.empty? || !password.blank?) && super
+  end
+
+
+
 end

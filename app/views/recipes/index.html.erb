@@ -11,13 +11,15 @@
           <div class="large-2 large-centered columns">
             <h4><%= link_to "Sign in", "#", data: {:'reveal-id' => 'sign-in-modal'}%></h4>
             <h4><%= link_to "Sign up", "#", data: {:'reveal-id' => 'sign-up-modal'}%></h4>
+            <h4><%= link_to "Sign in with Flickr", '/auth/flickr', data: 'close-reveal-modal'%></h4>
+
 
             <div id="sign-in-modal" class="reveal-modal" data-reveal>
               <%= render partial: 'devise/sessions/new'%>
               <a class="close-reveal-modal">&#215;</a>
             </div>
             <div id="sign-up-modal" class="reveal-modal" data-reveal>
-              <%= render partial: 'devise/registrations/new'%>
+              <%= render partial: 'registrations/new'%>
               <a class="close-reveal-modal">&#215;</a>
             </div>
 

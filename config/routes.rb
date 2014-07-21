@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :authentications
+
+  use_doorkeeper
+  devise_for :users, :controllers => {:registrations => 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,7 +10,7 @@ resources :users
 resources :recipes do
   get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag
 end
-
+  match '/auth/:provider/callback' => 'authentications#create', via: [:get, :post]
 
 
   # You can have the root of your site routed with "root"
@@ -15,7 +18,7 @@ end
 
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
-      resources :recipes
+      resources :recipes, :authentications
     end
   end
 

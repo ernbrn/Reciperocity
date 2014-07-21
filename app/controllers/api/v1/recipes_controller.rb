@@ -1,5 +1,7 @@
 class API::V1::RecipesController < ApplicationController
-
+  protect_from_forgery with: :null_session
+  before_filter :authenticate_user_from_token!
+  before_filter :authenticate_user!
   respond_to :json
 
   def index
@@ -26,3 +28,6 @@ class API::V1::RecipesController < ApplicationController
   end
 
 end
+
+
+# TODO make api better/more catered/specific and adhere to best practices.

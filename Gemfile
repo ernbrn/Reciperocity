@@ -14,6 +14,7 @@ gem 'binding_of_caller'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
+gem 'doorkeeper'
 gem 'fog'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
@@ -21,6 +22,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'kramdown'
 gem 'mini_magick'
+gem 'omniauth'
+gem 'omniauth-flickr', '~> 0.0.15'
 gem 'pg'
 gem 'postmark-rails'
 gem 'rails', '4.1.1'
@@ -32,6 +35,8 @@ gem 'unicorn'
 gem 'seed_dump'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# TODO friendly-ids
 
 
 
+gem "mocha", group: :test
