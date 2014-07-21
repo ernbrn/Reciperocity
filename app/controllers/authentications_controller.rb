@@ -14,8 +14,8 @@ class AuthenticationsController < ApplicationController
     if authentication
       flash[:notice] = "Signed in successfully"
       sign_in_and_redirect(:user, authentication.user)
-    elsif
-      auth = current_user.authentications.create!(:provider => @auth_hash['provider'], :uid => @auth_hash['uid'])
+    elsif current_user
+      current_user.authentications.create!(:provider => @auth_hash['provider'], :uid => @auth_hash['uid'])
       flash[:notice] = "Authentication was successfull"
       redirect_to authentications_path
     else
@@ -29,7 +29,6 @@ class AuthenticationsController < ApplicationController
         redirect_to new_user_registration_path
       end
     end
-    auth
   end
 
 
@@ -42,5 +41,6 @@ class AuthenticationsController < ApplicationController
     redirect_to authentications_path
 
   end
+#   TODO read Oauth documentation and try again
 
 end

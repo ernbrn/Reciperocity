@@ -147,7 +147,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.37.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.1, rbenv: 2.1.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faraday (v0.9.0, rbenv: 2.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="flickraw (v0.9.8, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog (v1.22.1, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-brightbox (v0.1.1, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-core (v1.22.0, rbenv: 2.1.2) [gem]" level="application" />
@@ -162,7 +162,6 @@
     <orderEntry type="library" scope="PROVIDED" name="ipaddress (v0.8.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.1.2, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.1, rbenv: 2.1.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jwt (v1.0.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kgio (v2.9.2, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kramdown (v1.3.3, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.4, rbenv: 2.1.2) [gem]" level="application" />
@@ -173,13 +172,10 @@
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.3.5, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mocha (v1.1.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.10.1, rbenv: 2.1.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.5.5, rbenv: 2.1.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-scp (v1.2.1, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-ssh (v2.9.1, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.2.1, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="oauth (v0.4.7, rbenv: 2.1.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="oauth2 (v1.0.0, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth (v1.2.2, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-flickr (v0.0.15, rbenv: 2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="omniauth-oauth (v1.0.1, rbenv: 2.1.2) [gem]" level="application" />

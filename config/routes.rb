@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 resources :users
+resources :photos
 resources :recipes do
   get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag
 end

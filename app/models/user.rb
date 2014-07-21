@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
 
   def apply_omniauth(omniauth)
-    authentications.build(:provider => auth_hash['provider'], :uid => auth_hash['uid'], :oauth_token => auth_hash['oauth_token'])
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid']) if omniauth
   end
 
   def password_required?
