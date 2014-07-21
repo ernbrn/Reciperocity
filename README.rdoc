@@ -4,7 +4,7 @@ Welcome to Receprocity!
 
 To start
 * Sign in (or up) by clicking on the little man.
-*If you have a Flickr log-in, you may log-in via that.
+* If you have a Flickr log-in, you may log-in via that.
 * When you sign up, an email will be sent for verificaiton. It will not be sent to your email -- use a mail
 catching service (such as MailCatcher) to catch this email. When you have caught it, click on the link inside
 and it will redirect you to Receprocity's homepage.
