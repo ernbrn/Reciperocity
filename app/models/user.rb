@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   has_many :authentications
 
 
+
   def apply_omniauth(omniauth)
-    authentications.build(:provider => auth_hash['provider'], :uid => auth_hash['uid'])
+    authentications.build(:provider => auth_hash['provider'], :uid => auth_hash['uid'], :oauth_token => auth_hash['oauth_token'])
   end
 
   def password_required?

@@ -7,11 +7,13 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @authentications = current_user.authentications if current_user
   end
 
   # GET /users/new
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+
 
     respond_to do |format|
       if @user.save
