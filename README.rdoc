@@ -11,7 +11,7 @@ catching service (such as MailCatcher) to catch this email. When you have caught
 and it will redirect you to Receprocity's homepage.
 
 If you wish for seed data run 
--- rake db:seed
+--rake db:seed--
 The User and Photos for these seeded recipes will be blank. Feel
 free to upload your own photos for them.
 
