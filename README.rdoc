@@ -5,14 +5,14 @@ Welcome to Receprocity!
 To start
 * Sign in (or up) by clicking on the little man.
 * If you have a Flickr log-in, you may log-in via that.
--Blahlbah
+
 
 When you sign up, an email will be sent for verificaiton. It will not be sent to your email -- use a mail
 catching service (such as MailCatcher) to catch this email. When you have caught it, click on the link inside
 and it will redirect you to Receprocity's homepage.
 
 If you wish for seed data run 
-rake db:seed
+ $ rake db:seed
 The User and Photos for these seeded recipes will be blank. Feel
 free to upload your own photos for them.
 
