@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Receprocity!
 
-Things you may want to cover:
+To start
+* Sign in (or up) by clicking on the little man.
+If you have a Flickr log-in, you may log-in via that.
+* When you sign up, an email will be sent for verificaiton. It will not be sent to your email -- use a mail
+catching service (such as MailCatcher) to catch this email. When you have caught it, click on the link inside
+and it will redirect you to Receprocity's homepage.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you wish for seed data run rake db:seed. The User and Photos for these seeded recipes will be blank. Feel
+free to upload your own photos for them.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To view authenticatons go to localhost/authentications (if you did not log in with Flickr, you can do so there)
+To view users go to localhost/users
+To view photo API hash go to localhost/photos
+
+
+Otherwise, add recipes to your heart's content!
