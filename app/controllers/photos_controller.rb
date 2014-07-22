@@ -74,3 +74,5 @@ end
       params[:photo]
     end
 end
+
+# TODO clean up this controller
