@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # TODO friendly-ids
 
-
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
 
 gem "mocha", group: :test
