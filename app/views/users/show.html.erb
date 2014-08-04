@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-
+<div class="row" id="index-partial">
+  <div class="large-12 large-centered columns">
+  <%= render :partial => 'recipes/recipes', :object => @user.recipes%>
+  </div>
+  </div>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
