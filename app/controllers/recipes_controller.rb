@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
 
     respond_to do |format|
-      if @recipe.save
+     if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
       else
         format.html { render :new }
