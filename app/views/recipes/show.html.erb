@@ -3,7 +3,7 @@
 <div class="large-6 columns large-left" id="recipe-block">
         <strong>
           <h1 class="recipe-link"><%=@recipe.dish_name%><br></h1>
-          <h3 class="recipe-link">Created by: <%=@recipe.user.name%></h3>
+          <h3 class="recipe-link">Created by: <%= link_to @recipe.user.name, user_path(@recipe.user.id) %></h3>
         </strong>
         <%= image_tag(@recipe.picture, class: "recipe-pic") %><br>
 
