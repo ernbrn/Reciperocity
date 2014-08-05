@@ -28,7 +28,7 @@
   <%=@recipe.yield%>
 </div>
 </div>
-<%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), :back, class:"toggles" %>
+<%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
 <%if current_user == @recipe.user %>
 <%= link_to content_tag(:i, nil, class:"fa fa-pencil fa-4x"), edit_recipe_path(@recipe), class:"toggles" %>
 <%end%>
