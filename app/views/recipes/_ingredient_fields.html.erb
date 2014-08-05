@@ -1,23 +1,11 @@
-<div class="row">
- <div class='nested-fields'>
-  <div class="large-2 columns">
+<div class='nested-fields'>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
   <%= f.label :amount %>
   <%= f.number_field :amount %>
+  <%= f.label :measure %>
+  <%= f.text_field :measure %>
+
+
+  <%= link_to_remove_association "remove task", f %>
 </div>
-  <div class="large-4 columns">
-
- <%= f.label :measure %>
-        <%= f.text_field :measure %>
-
-</div>
- <div class="large-6 columns">
-
-  <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
-      <%= link_to_remove_association 'remove', f %>
-               <br>
-               <br>
-             </div>
-             </div>
-           </div>
