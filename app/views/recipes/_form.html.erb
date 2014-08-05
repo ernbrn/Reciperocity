@@ -16,11 +16,13 @@
       <%= f.label :dish_name %>
       <%= f.text_field :dish_name %>
     </div>
-    <div class="field">
-      <%= f.label :ingredient_list %>
-      <%= f.text_area :ingredient_list %>
-    </div>
 
+    <%= f.fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredient_fields', :f => ingredient %>
+                <% end %>
+                    <div class='links'>
+                            <%= link_to_add_association 'add ingredient', f, :ingredients %>
+                                </div>
     <div class="field">
       <%= f.label :instructions %>
       <%= f.text_area :instructions %>
