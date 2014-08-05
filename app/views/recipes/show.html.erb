@@ -28,6 +28,8 @@
   <%=@recipe.yield%>
 </div>
 </div>
+
+<%= button_to "Email Grocery List", send_email_recipe_path, class: "button" %>
 <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
 <%if current_user == @recipe.user %>
 <%= link_to content_tag(:i, nil, class:"fa fa-pencil fa-4x"), edit_recipe_path(@recipe), class:"toggles" %>

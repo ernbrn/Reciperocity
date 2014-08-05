@@ -1,4 +1,3 @@
-require 'flickraw'
 class PhotosController < ApplicationController
 
 
@@ -11,8 +10,7 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-
-end
+  end
 
   # GET /photos/new
   def new

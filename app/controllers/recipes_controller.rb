@@ -14,6 +14,20 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @user = User.new
     @users = User.all
+    @search = Recipe.search do
+          fulltext params[:search]
+            end
+    @recipes = @search.results
+  end
+
+
+  def ingredient_email
+    if current_user
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
+    ListMailer.groceries(@user, @recipe, @user.email).deliver
+    redirect_to @user, notice: "Email sent"
+    end
   end
 
   # GET /recipes/new
@@ -72,6 +86,7 @@ class RecipesController < ApplicationController
     def set_recipe
       @recipe = Recipe.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
