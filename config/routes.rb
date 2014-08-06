@@ -37,7 +37,7 @@ end
 
   # Example resource route with options:
   #   resources :products do
-  #     member do
+  #member do
   #       get 'short'
   #       post 'toggle'
   #     end

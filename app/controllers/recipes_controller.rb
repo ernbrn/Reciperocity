@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
     @users = User.all
     @search = Recipe.search do
           fulltext params[:search]
-            end
+    end
     @recipes = @search.results
   end
 

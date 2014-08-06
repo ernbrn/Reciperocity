@@ -7,7 +7,10 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
 
   searchable do
-    text :dish_name
+   text :dish_name
+    text :ingredients do
+      ingredients.map {|ingredient| ingredient.name}
+    end
   end
 
 end
