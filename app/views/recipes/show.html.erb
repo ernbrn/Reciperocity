@@ -19,7 +19,11 @@
   <h3 class="recipe-link">Ingredients:</h3>
   <%= render @ingredients %>
   <h3 class="recipe-link">Instructions:</h3>
-  <%=@recipe.instructions%>
+  <ul>
+  <%@recipe.split_instructions.each do |instruction|%>
+    <li> <%= instruction %></li>
+<%end%>
+  </ul>
   <h3 class="recipe-link">Prep Time:</h3>
   <%=@recipe.prep_time%>
   <h3 class="recipe-link">Cook Time:</h3>

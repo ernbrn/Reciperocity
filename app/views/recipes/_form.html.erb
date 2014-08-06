@@ -24,8 +24,8 @@
         <%= link_to_add_association content_tag(:i, ' ingredient', class: "fa fa-plus"), f, :ingredients %>
       </div>
       <div class="field">
-        <%= f.label :instructions %>
-        <%= f.text_area :instructions %>
+        <%= f.label :instructions%>
+        <%= f.text_area :instructions, placeholder: "Put each step on it's own line" %>
       </div>
 
       <div class="field">
