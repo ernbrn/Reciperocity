@@ -13,4 +13,8 @@ class Recipe < ActiveRecord::Base
     end
   end
 
+  def split_instructions
+    self.instructions = instructions.split("\n")
+  end
+
 end

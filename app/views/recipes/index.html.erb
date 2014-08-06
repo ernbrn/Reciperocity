@@ -54,14 +54,14 @@
     </div>
 
 <div id="user-modal" class="reveal-modal" data-reveal>
-  <h2>You are signed in as <%=current_user.name %></h2>
+  <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
    <%= render partial: 'users/in_options'%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 </body>
 
 <div id="recipe-modal" class="reveal-modal" data-reveal>
-  <h2>New Recipe</h2>
+  <h2 class="page-title">New Recipe</h2>
   <%= render partial: 'form', object: @recipe%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
