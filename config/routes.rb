@@ -10,6 +10,9 @@ resources :users
 resources :photos
 resources :recipes do
   get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag
+  member do
+  post 'send_email' => 'recipes#ingredient_email'
+    end
 end
   match '/auth/:provider/callback' => 'authentications#create', via: [:get, :post]
 
@@ -34,7 +37,7 @@ end
 
   # Example resource route with options:
   #   resources :products do
-  #     member do
+  #member do
   #       get 'short'
   #       post 'toggle'
   #     end
