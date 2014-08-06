@@ -3,7 +3,7 @@
 <h1 class="page-title">Reciperocity</h1>
      <%= form_tag recipes_path, :method => :get do %>
         <p>
-        <%= text_field_tag :search, params[:search], :placeholder => "Dish Search" %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Search by Dish name or Ingredient" %>
                 <%= submit_tag "Search", :name => nil, class: 'button' %>
               <% end %>
     <%unless current_user%><h4 class="page-title">Please sign up or in</h4>
@@ -42,7 +42,7 @@
   </div>
   </div>
 <div class="row">
-  <div class="large-4 columns large-centered" id="cutlery">
+  <div class="large-1 columns large-centered" id="cutlery">
   <%= link_to content_tag(:i, nil, class: "fa fa-home fa-5x"), root_path  %><br><br><br>
 
   <%= link_to content_tag(:i, nil, class: "fa fa-child fa-5x"), "#", data: {:'reveal-id' => 'user-modal'} %><br><br><br>
