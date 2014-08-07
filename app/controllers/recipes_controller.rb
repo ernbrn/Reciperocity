@@ -84,7 +84,7 @@ class RecipesController < ApplicationController
   end
 
   def add_to_potluck
-    @potluck = Potluck.find(params[:id])
+    @potluck = Potluck.find(params[:potluck_ids])
     @recipe.potlucks << @potluck
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
   end

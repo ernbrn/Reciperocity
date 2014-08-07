@@ -5,7 +5,7 @@
 
     <div class="field">
     <%= label :potluck_ids, "Potluck" %><br>
-    <%= collection_select @recipe.potlucks, :potluck_ids, current_user.potlucks, :id, :name %>
+    <%= collection_select @potlucks, :potluck_ids, current_user.potlucks, :id, :name %>
     </div>
 
 
