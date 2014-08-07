@@ -48,8 +48,7 @@
   <%= link_to content_tag(:i, nil, class: "fa fa-child fa-5x"), "#", data: {:'reveal-id' => 'user-modal'} %><br><br><br>
 
 
-    <%= link_to content_tag(:i, nil, class: "fa fa-cutlery fa-5x"), "#", data: {:'reveal-id' => 'recipe-modal'} %>
-  <br>
+ <br>
   </div>
     </div>
 
@@ -62,7 +61,12 @@
 
 <div id="recipe-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title">New Recipe</h2>
-  <%= render partial: 'form', object: @recipe%>
+  <%= render partial: 'recipes/form', object: @recipe%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="potluck-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Potluck</h2>
+  <%= render partial: 'potlucks/form', object: @potluck%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 </body>

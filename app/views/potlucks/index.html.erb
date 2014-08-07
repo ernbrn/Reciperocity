@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="large-4 large-centered columns">
+<h1 class="page-title">Reciperocity</h1>
+     <%= form_tag recipes_path, :method => :get do %>
+        <p>
+        <%= text_field_tag :search, params[:search], :placeholder => "Search by Dish name or Ingredient" %>
+                <%= submit_tag "Search", :name => nil, class: 'button' %>
+              <% end %>
+          </div>
+  </div>
+
+<body>
+<div class="row" id="index-partial">
+  <div class="large-12 large-centered columns">
+  <%= render :partial => 'potluck', :object => @potlucks %>
+  </div>
+  </div>
+<div class="row">
+  <div class="large-1 columns large-centered" id="cutlery">
+  <%= link_to content_tag(:i, nil, class: "fa fa-home fa-5x"), root_path  %><br><br><br>
+
+  <%= link_to content_tag(:i, nil, class: "fa fa-child fa-5x"), "#", data: {:'reveal-id' => 'user-modal'} %><br><br><br>
+
+
+ <br>
+  </div>
+    </div>
+
+<div id="user-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
+   <%= render partial: 'users/in_options'%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+</body>
+
+<div id="potluck-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Potluck</h2>
+  <%= render partial: 'form', object: @potluck%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+</body>

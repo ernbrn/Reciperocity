@@ -1,0 +1,16 @@
+<body class="fonts">
+<div class="large-6 large-centered columns">
+  <%= form_tag({controller: "recipes", action: "add_to_potluck"}, method: "post") do %>
+
+
+    <div class="field">
+    <%= label :potluck_ids, "Potluck" %><br>
+    <%= collection_select @recipe.potlucks, :potluck_ids, current_user.potlucks, :id, :name %>
+    </div>
+
+
+
+    <div class="action">
+        <%= submit_tag "Add Recipe to Potluck", class: "button" %>
+      </div>
+  <%end%>

@@ -1,1 +1,7 @@
-<h4><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></h4>
+<div class="row">
+  <div class="large-6 large-centered columns">
+<%= link_to content_tag(:i, "   Sign out", class: "fa fa-times fa-2x"), destroy_user_session_path, :method => :delete%><br><br>
+<%= link_to content_tag(:i, "   Make a new Recipe", class: "fa fa-spoon fa-2x"), "#", data: {:'reveal-id' => 'recipe-modal'} %><br><br>
+     <%= link_to content_tag(:i, "   Make a new Potluck", class: "fa fa-cutlery fa-2x"), "#", data: {:'reveal-id' => 'potluck-modal'} %>
+ </div>
+</div>

@@ -1,0 +1,26 @@
+<body class="fonts">
+<div class="large-6 large-centered columns">
+  <%= form_for(@potluck) do |f| %>
+      <% if @potluck.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@potluck.errors.count, "error") %> prohibited this potluck from being saved:</h2>
+
+            <ul>
+              <% potluck.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="action">
+        <%= f.submit "Make Potluck", class: "button" %>
+      </div>
+      </div>
+
+  <% end %>
+  </body>

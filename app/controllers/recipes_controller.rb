@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck]
 
   # GET /recipes
   # GET /recipes.json
@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new
     @recipes = Recipe.all
+    @potluck = Potluck.new
     @user = User.new
     @users = User.all
     @search = Recipe.search do
@@ -19,6 +20,7 @@ class RecipesController < ApplicationController
     end
     @recipes = @search.results
   end
+
 
 
   def ingredient_email
@@ -53,9 +55,9 @@ class RecipesController < ApplicationController
     respond_to do |format|
      if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
-      else
-        format.html { render :new }
-      end
+     else
+       format.html { render :new }
+     end
     end
   end
 
@@ -81,6 +83,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def add_to_potluck
+    @potluck = Potluck.find(params[:id])
+    @recipe.potlucks << @potluck
+    redirect_to @recipe, :notice => "Recipe Added to Potluck"
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -90,7 +97,11 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:dish_name, :instructions, :prep_time, :cook_time, :yield, :picture, :tag_list, :user_id, ingredients_attributes: [:id, :amount, :measure, :name, :_destroy])
+      params.require(:recipe). \
+        permit(:dish_name, :instructions, :prep_time, :cook_time, :yield,
+               :picture, :tag_list, :user_id,
+               ingredients_attributes: [:id, :amount, :measure, :name, :_destroy],
+               potluck_ids: [] )
     end
 end
 

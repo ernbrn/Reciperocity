@@ -18,7 +18,7 @@
       </div>
 
       <%= f.fields_for :ingredients do |ingredient| %>
-          <%= render 'ingredient_fields', :f => ingredient %>
+          <%= render 'recipes/ingredient_fields', :f => ingredient %>
       <% end %>
       <div class='links'>
         <%= link_to_add_association content_tag(:i, ' ingredient', class: "fa fa-plus"), f, :ingredients %>
