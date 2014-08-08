@@ -1,9 +1,19 @@
 
 .recipe-pic{
+   border-radius: 130px;
+   -webkit-border-radius: 130px;
+    -moz-border-radius: 130px;
     postion: absolute;
-    border-radius: 20%;
     vertical-align: middle;
 }
+
+.recipe-pic-thumb{
+   border-radius: 5%;
+    postion: absolute;
+    vertical-align: middle;
+}
+
+
 
 .page-title {
     font-family: 'Satisfy', cursive;
@@ -14,6 +24,7 @@
 .recipe-link{
     font-family: 'Architects Daughter', cursive;
     color: #0078a0;
+     : middle;
 }
 .toggles{
     margin-left: 20px;

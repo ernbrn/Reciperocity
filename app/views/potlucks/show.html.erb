@@ -5,4 +5,10 @@
           <h1 class="recipe-link"><%=@potluck.name%><br></h1>
         </strong>
         <%= button_to 'Join Potluck', attend_potluck_path(@potluck.id), class:"button"%>
+
+
+        <%= form_tag invite_to_potluck_path do%>
+          <%= email_field_tag :email%>
+          <%=submit_tag "email", class: "button" %>
+        <%end%>
         </body>

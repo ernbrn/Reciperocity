@@ -29,6 +29,7 @@ end
  resources :potlucks do
    member do
      post :attend
+     post :invite_to
    end
  end
 
