@@ -18,6 +18,7 @@ class PotlucksController < ApplicationController
 
   def create
     @potluck = Potluck.new(potluck_params)
+    @potluck.users << current_user
 
   respond_to do |format|
    if @potluck.save
