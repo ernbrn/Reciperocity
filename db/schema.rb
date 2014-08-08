@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805025257) do
+ActiveRecord::Schema.define(version: 20140807023507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,22 @@ ActiveRecord::Schema.define(version: 20140805025257) do
   end
 
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
+
+  create_table "potlucks", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "potlucks_recipes", id: false, force: true do |t|
+    t.integer "potluck_id"
+    t.integer "recipe_id"
+  end
+
+  create_table "potlucks_users", id: false, force: true do |t|
+    t.integer "potluck_id"
+    t.integer "user_id"
+  end
 
   create_table "recipes", force: true do |t|
     t.datetime "created_at"

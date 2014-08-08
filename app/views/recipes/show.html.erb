@@ -39,5 +39,12 @@
 <%= link_to content_tag(:i, nil, class:"fa fa-pencil fa-4x"), edit_recipe_path(@recipe), class:"toggles" %>
 <%end%>
 <td><%= link_to 'Sign out forever', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<br>
+  <%= link_to "add recipe to potluck", "#", data: {:'reveal-id' => 'add-potluck-modal'} %><br><br><br>
+
+<div id="add-potluck-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">Add Recipe to one of your Potlucks</h2>
+  <%= render partial: 'join_potluck', object: @recipe%>
+  <a class="close-reveal-modal">&#215;</a>
 
 </body>

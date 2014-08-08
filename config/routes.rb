@@ -26,6 +26,18 @@ end
     end
   end
 
+ resources :potlucks do
+   member do
+     post :attend
+   end
+ end
+
+ resources :recipes do
+   member do
+     post :add_to_potluck
+   end
+ end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
