@@ -20,6 +20,7 @@ class PotlucksController < ApplicationController
     @potluck = Potluck.new(potluck_params)
     @potluck.users << current_user
     @potluck.organizer = current_user.name
+    @potluck.invitees = []
 
   respond_to do |format|
    if @potluck.save
@@ -46,9 +47,15 @@ class PotlucksController < ApplicationController
 
   def invite_to
     @email = params[:email]
+    unless @potluck.invitees.include? @email
+    @potluck.invitees_will_change!
+    @potluck.invitees << @email
+    @potluck.save
     InviteMailer.invite(current_user, @potluck, @email).deliver
     redirect_to @potluck, :notice => "Ok! An invite has been sent to #{@email}!"
-
+    else
+      redirect_to @potluck, :notice => "Looks like you've already invited that person to your potluck!"
+    end
   end
 
   private

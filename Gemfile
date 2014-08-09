@@ -11,6 +11,7 @@ end
 gem 'acts-as-taggable-on'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'binding_of_caller'
+gem 'byebug'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'cocoon'
