@@ -5,13 +5,30 @@
         <h1 class="recipe-link"><%=@potluck.name%><br></h1>
          <h3 class="recipe-link">Organizer: <%=@potluck.organizer%><br></h1>
         </strong>
+        <%if @potluck.invitees.include? current_user.email%>
         <%unless current_user.potlucks.include? @potluck%>
         <%= button_to 'Join Potluck', attend_potluck_path(@potluck.id), class:"button"%>
       <%end%>
-
-
+    <%end%>
+      <%if @organizer == current_user%>
         <%= form_tag invite_to_potluck_path do%>
           <%= email_field_tag :email, nil, placeholder: "Invite your friends!"%>
           <%=submit_tag "email", class: "button" %>
+      </div>
+<div class="large-6 columns large-left" id="recipe-block">
+      <h3 class="recipe-link">Your invitees:
+      <br> <%@potluck.invitees.each do |invitee|%>
+    <%= invitee %> <br>
+  <%end%>
+      <%end%>
         <%end%>
-        </body>
+    <br></h1>
+</div>
+<div class="large-6 columns large-left" id="recipe-block">
+  <%unless @organizer == current_user%>
+ <%if current_user.potlucks.include? @potluck%>
+        <h1 class="recipe-link">You are attending this Potluck!<br></h1>
+      <%end%>
+    <%end%>
+</div>
+       </body>
