@@ -4,7 +4,7 @@
       <strong>
      <li> <%= link_to recipe.dish_name, recipe, class:"recipe-link"%><br>
       </strong>
-         <%= link_to image_tag(recipe.picture.thumb.url, class: "recipe-pic"), recipe %><br>
+         <%= link_to image_tag(recipe.picture.thumb.url, class: "recipe-pic-thumb"), recipe %><br>
 
             <% recipe.tags.each do |tag|%>
 

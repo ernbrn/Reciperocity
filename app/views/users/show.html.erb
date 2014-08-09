@@ -2,9 +2,9 @@
 <div class="row" id="index-partial">
   <div class="large-12 large-centered columns">
     <%if @user == current_user%>
-    <h2 class="recipe-link">Recipes by you</h2>
+    <h2 class="recipe-link">Recipes told by you</h2>
   <%else%>
-    <h2 class="recipe-link">Recipes by <%=@user.name%></h2>
+    <h2 class="recipe-link">Recipes told by <%=@user.name%></h2>
   <%end%>
   <%= render :partial => 'recipes/recipes', :object => @user.recipes%>
   </div>

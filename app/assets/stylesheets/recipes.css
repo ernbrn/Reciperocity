@@ -1,9 +1,23 @@
 
 .recipe-pic{
+   border-radius: 3%;
     postion: absolute;
-    border-radius: 20%;
     vertical-align: middle;
 }
+
+.recipe-pic-thumb{
+   border-radius: 5%;
+    vertical-align: middle;
+}
+
+#recipe-dish-name{
+  font-weight: bolder;
+}
+
+#search-button{
+  margin-left: 110px;
+}
+
 
 .page-title {
     font-family: 'Satisfy', cursive;
@@ -12,8 +26,9 @@
 }
 
 .recipe-link{
-    font-family: 'Architects Daughter', cursive;
+  font-family: 'Amatic SC', cursive;
     color: #0078a0;
+     : middle;
 }
 .toggles{
     margin-left: 20px;

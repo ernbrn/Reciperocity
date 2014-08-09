@@ -85,8 +85,12 @@ class RecipesController < ApplicationController
 
   def add_to_potluck
     @potluck = Potluck.find(params[:potluck_ids])
+   if @recipe.potlucks.include? @potluck
+     redirect_to @recipe, :notice => "It appears that this recipe is already a part of that potluck."
+   else
     @recipe.potlucks << @potluck
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
+   end
   end
   private
     # Use callbacks to share common setup or constraints between actions.

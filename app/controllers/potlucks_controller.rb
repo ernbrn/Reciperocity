@@ -1,11 +1,11 @@
 class PotlucksController < ApplicationController
-  before_action :find_potluck, only: [:show, :edit, :update, :destroy, :attend]
+  before_action :find_potluck, only: [:show, :edit, :update, :destroy, :attend, :invite_to]
   def index
     @potlucks = Potluck.all
     @recipe = Recipe.new
     @potluck = Potluck.new
     @recipes = Recipe.all
-    
+
   end
 
   def show
@@ -19,6 +19,7 @@ class PotlucksController < ApplicationController
   def create
     @potluck = Potluck.new(potluck_params)
     @potluck.users << current_user
+    @potluck.organizer = current_user.name
 
   respond_to do |format|
    if @potluck.save
@@ -35,8 +36,19 @@ class PotlucksController < ApplicationController
   end
 
   def attend
+   if current_user.potlucks.include? @potluck
+      redirect_to @potluck, :notice => "You are already a member of this Potluck"
+   else
     current_user.potlucks << @potluck
     redirect_to @potluck, :notice => "You are now attending #{@potluck.name}!"
+   end
+  end
+
+  def invite_to
+    @email = params[:email]
+    InviteMailer.invite(current_user, @potluck, @email).deliver
+    redirect_to @potluck, :notice => "Ok! An invite has been sent to #{@email}!"
+
   end
 
   private
