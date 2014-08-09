@@ -40,8 +40,13 @@ class PotlucksController < ApplicationController
    if current_user.potlucks.include? @potluck
       redirect_to @potluck, :notice => "You are already a member of this Potluck"
    else
+     if @potluck.invitees.include? current_user.email
     current_user.potlucks << @potluck
     redirect_to @potluck, :notice => "You are now attending #{@potluck.name}!"
+     else
+       redirect_to @potluck, :notice => "Ooops! It looks like you haven't yet been
+       invited to this potluck."
+     end
    end
   end
 
