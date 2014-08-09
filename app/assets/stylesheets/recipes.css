@@ -1,18 +1,22 @@
 
 .recipe-pic{
-   border-radius: 130px;
-   -webkit-border-radius: 130px;
-    -moz-border-radius: 130px;
+   border-radius: 3%;
     postion: absolute;
     vertical-align: middle;
 }
 
 .recipe-pic-thumb{
    border-radius: 5%;
-    postion: absolute;
     vertical-align: middle;
 }
 
+#recipe-dish-name{
+  font-weight: bolder;
+}
+
+#search-button{
+  margin-left: 110px;
+}
 
 
 .page-title {
