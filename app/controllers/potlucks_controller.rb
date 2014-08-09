@@ -9,6 +9,7 @@ class PotlucksController < ApplicationController
   end
 
   def show
+    @organizer = @potluck.users.first
 
   end
 
