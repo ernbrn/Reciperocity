@@ -44,6 +44,9 @@ class PotlucksController < ApplicationController
    else
      if @potluck.invitees.include? current_user.email
     current_user.potlucks << @potluck
+    @potluck.invitees_will_change!
+    @potluck.invitees.delete(current_user.email)
+    @potluck.save
     redirect_to @potluck, :notice => "You are now attending #{@potluck.name}!"
      else
        redirect_to @potluck, :notice => "Ooops! It looks like you haven't yet been
