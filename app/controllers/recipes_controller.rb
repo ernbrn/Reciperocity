@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :clone]
+  before_action :find_potluck, only: [:add_to_potluck, :remove_from_potluck]
 
   # GET /recipes
   # GET /recipes.json
@@ -91,7 +92,6 @@ class RecipesController < ApplicationController
   end
 
   def add_to_potluck
-    @potluck = Potluck.find(params[:potluck_ids])
    if @recipe.potlucks.include? @potluck
      redirect_to @recipe, :notice => "It appears that this recipe is already a part of that potluck."
    else
@@ -99,10 +99,25 @@ class RecipesController < ApplicationController
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
    end
   end
+
+  def remove_from_potluck
+    if (@recipe.potlucks.include? @potluck && @potluck.recipe_adder == current_user.id)
+      @recipe.potlucks.delete(@potluck)
+      redirect_to @recipe, :notice => "Ok! That recipe was removed from the potluck"
+    elsif @potluck.recipe_adder != current_user.id
+      redirect_to @recipe, :notice => "You do not have permission to do that"
+    else
+      redirect_to @recipe, :notice => "This recipe is not part of that potluck!"
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])
+    end
+
+    def find_potluck
+      @potluck = Potluck.find(params[:potluck_id])
     end
 
 
