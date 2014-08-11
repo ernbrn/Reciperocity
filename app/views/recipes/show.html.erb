@@ -3,7 +3,14 @@
 <div class="large-6 columns large-left" id="recipe-block">
         <strong>
           <h1 class="recipe-link" id="recipe-dish-name"><%=@recipe.dish_name%><br></h1>
+          <%if @owner == @recipe.user_id%>
+
           <h3 class="recipe-link">Told by: <%= link_to @recipe.user.name, user_path(@recipe.user.id) %></h3>
+        <%else%>
+         <h3 class="recipe-link">Originally by: <%= link_to @owner_user.name, user_path(@owner_user.id) %></h3>
+       <h3 class="recipe-link">Retold by: <%= link_to @recipe.user.name, user_path(@recipe.user.id) %></h3>
+       <%end%>
+
         </strong>
         <%= image_tag(@recipe.picture, class: "recipe-pic") %><br>
 

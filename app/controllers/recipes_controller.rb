@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :clone]
 
   # GET /recipes
   # GET /recipes.json
@@ -7,6 +7,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @ingredients = @recipe.ingredients
+    @owner =  @recipe.owner
+    @owner_user = User.find(@recipe.owner)
   end
 
   def index
@@ -37,6 +39,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def clone
+    @recipe = Recipe.new(@recipe.attributes)
+  end
+
   def tags
     @tag = params[:tag]
     @recipes = Recipe.tagged_with(@tag).includes(:tags)
@@ -51,6 +57,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
+    @recipe.owner = current_user.id
 
     respond_to do |format|
      if @recipe.save
