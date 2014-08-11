@@ -1,8 +1,12 @@
-
 .recipe-pic{
    border-radius: 3%;
     postion: absolute;
     vertical-align: middle;
+}
+
+#thumb-name{
+  font-size: 30px;
+
 }
 
 .recipe-pic-thumb{
@@ -28,7 +32,10 @@
 .recipe-link{
   font-family: 'Amatic SC', cursive;
     color: #0078a0;
-     : middle;
+}
+
+#holder{
+  opacity: 0.5;
 }
 .toggles{
     margin-left: 20px;

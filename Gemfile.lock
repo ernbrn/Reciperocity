@@ -99,6 +99,8 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     hike (1.2.3)
+    holder_rails (2.3.2)
+      railties (>= 3.1.0)
     i18n (0.6.11)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -248,6 +250,7 @@ DEPENDENCIES
   fog
   font-awesome-sass
   foundation-rails
+  holder_rails
   jbuilder (~> 2.0)
   jquery-rails
   kramdown

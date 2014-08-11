@@ -1,5 +1,6 @@
 class PotlucksController < ApplicationController
   before_action :find_potluck, only: [:show, :edit, :update, :destroy, :attend, :invite_to]
+  before_action :authenticate_user!
   def index
     @potlucks = Potluck.all
     @recipe = Recipe.new
@@ -43,6 +44,9 @@ class PotlucksController < ApplicationController
    else
      if @potluck.invitees.include? current_user.email
     current_user.potlucks << @potluck
+    @potluck.invitees_will_change!
+    @potluck.invitees.delete(current_user.email)
+    @potluck.save
     redirect_to @potluck, :notice => "You are now attending #{@potluck.name}!"
      else
        redirect_to @potluck, :notice => "Ooops! It looks like you haven't yet been
@@ -52,7 +56,7 @@ class PotlucksController < ApplicationController
   end
 
   def invite_to
-    @email = params[:email]
+    @email = params[:email].downcase
     unless @potluck.invitees.include? @email
     @potluck.invitees_will_change!
     @potluck.invitees << @email
