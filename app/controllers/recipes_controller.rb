@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :clone]
+  before_action :find_potluck, only: [:add_to_potluck, :remove_from_potluck]
 
   # GET /recipes
   # GET /recipes.json
@@ -7,6 +8,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @ingredients = @recipe.ingredients
+    @owner =  @recipe.owner
+    @owner_user = User.find(@recipe.owner)
   end
 
   def index
@@ -37,6 +40,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def clone
+    @recipe = Recipe.new(@recipe.attributes)
+  end
+
   def tags
     @tag = params[:tag]
     @recipes = Recipe.tagged_with(@tag).includes(:tags)
@@ -51,6 +58,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
+    @recipe.owner = current_user.id
 
     respond_to do |format|
      if @recipe.save
@@ -84,7 +92,6 @@ class RecipesController < ApplicationController
   end
 
   def add_to_potluck
-    @potluck = Potluck.find(params[:potluck_ids])
    if @recipe.potlucks.include? @potluck
      redirect_to @recipe, :notice => "It appears that this recipe is already a part of that potluck."
    else
@@ -92,10 +99,25 @@ class RecipesController < ApplicationController
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
    end
   end
+
+  def remove_from_potluck
+    if (@recipe.potlucks.include? @potluck && @potluck.recipe_adder == current_user.id)
+      @recipe.potlucks.delete(@potluck)
+      redirect_to @recipe, :notice => "Ok! That recipe was removed from the potluck"
+    elsif @potluck.recipe_adder != current_user.id
+      redirect_to @recipe, :notice => "You do not have permission to do that"
+    else
+      redirect_to @recipe, :notice => "This recipe is not part of that potluck!"
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])
+    end
+
+    def find_potluck
+      @potluck = Potluck.find(params[:potluck_id])
     end
 
 
