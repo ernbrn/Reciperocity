@@ -1,5 +1,5 @@
 class Potluck < ActiveRecord::Base
-  has_and_belongs_to_many :users
-  has_and_belongs_to_many :recipes
+  has_many :users, through: :potluck_signups
+  has_many :recipes, through: :potluck_signups
 
 end
