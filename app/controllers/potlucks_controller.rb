@@ -20,7 +20,8 @@ class PotlucksController < ApplicationController
 
   def create
     @potluck = Potluck.new(potluck_params)
-    @potluck.users << current_user
+    @signup = PotluckSignup.create(user:current_user, potluck: @potluck)
+    @signup.save
     @potluck.organizer = current_user.name
     @potluck.invitees = []
 

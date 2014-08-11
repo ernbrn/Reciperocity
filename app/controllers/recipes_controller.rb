@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :clone]
-  before_action :find_potluck, only: [:add_to_potluck, :remove_from_potluck]
+  before_action :find_potluck, only: [:remove_from_potluck]
 
   # GET /recipes
   # GET /recipes.json
@@ -92,12 +92,15 @@ class RecipesController < ApplicationController
   end
 
   def add_to_potluck
-   if @recipe.potlucks.include? @potluck
+   @potluck = Potluck.find(params[:potluck_id])
+   @signup = PotluckSignup.find_by(user: current_user)
+ if @recipe.potlucks.include? @potluck
      redirect_to @recipe, :notice => "It appears that this recipe is already a part of that potluck."
    else
-    @recipe.potlucks << @potluck
+    @signup.recipe = @recipe
+    @signup.save
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
-   end
+ end
   end
 
   def remove_from_potluck
