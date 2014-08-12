@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :recipes
   has_many :authentications
-  has_and_belongs_to_many :potlucks
+  has_many :potluck_signups
+  has_many :potlucks, through: :potluck_signups
 
 
 
