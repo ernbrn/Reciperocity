@@ -10,8 +10,7 @@ class PotlucksController < ApplicationController
   end
 
   def show
-    @organizer = @potluck.users.first
-
+    @organizer = @potluck.potluck_signups.first.user
   end
 
   def new
@@ -40,20 +39,17 @@ class PotlucksController < ApplicationController
   end
 
   def attend
-   if current_user.potlucks.include? @potluck
-      redirect_to @potluck, :notice => "You are already a member of this Potluck"
-   else
      if @potluck.invitees.include? current_user.email
-    @signup = PotluckSignup.create(user:current_user, potluck: @potluck)
-    @potluck.invitees_will_change!
-    @potluck.invitees.delete(current_user.email)
-    @potluck.save
-    redirect_to @potluck, :notice => "You are now attending #{@potluck.name}!"
+       @signup = PotluckSignup.create(user:current_user, potluck: @potluck)
+       @signup.save
+       @potluck.invitees_will_change!
+       @potluck.invitees.delete(current_user.email)
+       @potluck.save
+       redirect_to @potluck, :notice => "You are now attending #{@potluck.name}!"
      else
        redirect_to @potluck, :notice => "Ooops! It looks like you haven't yet been
        invited to this potluck."
      end
-   end
   end
 
   def invite_to

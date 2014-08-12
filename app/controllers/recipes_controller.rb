@@ -93,12 +93,11 @@ class RecipesController < ApplicationController
 
   def add_to_potluck
    @potluck = Potluck.find(params[:potluck_id])
-   @signup = PotluckSignup.find_by(user: current_user)
+   @signup = PotluckSignup.find_by(user: current_user, potluck: @potluck)
  if @recipe.potlucks.include? @potluck
      redirect_to @recipe, :notice => "It appears that this recipe is already a part of that potluck."
    else
     @signup.recipe = @recipe
-    byebug
     @signup.save
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
  end

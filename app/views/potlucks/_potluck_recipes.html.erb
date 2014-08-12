@@ -1,0 +1,24 @@
+<div class="large-12 columns large-center" id="recipe-block">
+    <ul class="large-block-grid-3">
+    <% recipes.each do |recipe| %>
+      <strong>
+     <li> <%= link_to recipe.dish_name, recipe, class:"recipe-link", id: "thumb-name"%><br>
+      </strong>
+      <%if recipe.picture.thumb.url%>
+         <%= link_to image_tag(recipe.picture.thumb.url, class: "recipe-pic-thumb"), recipe %><br>
+       <%else%>
+         <%= link_to (holder_tag '300x225', recipe.dish_name,'dark', class:'recipe-pic-thumb', id:'holder'), recipe%>
+       <%end%>
+
+            <% recipe.tags.each do |tag|%>
+
+     <%= link_to tag, tag_recipes_path(tag.name), class:"custom-label-class", id:'tag' %>
+      <% end %>
+       <br>
+        <br>
+
+
+<% end %>
+      </li>
+    </ul>
+</div>
