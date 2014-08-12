@@ -98,6 +98,7 @@ class RecipesController < ApplicationController
      redirect_to @recipe, :notice => "It appears that this recipe is already a part of that potluck."
    else
     @signup.recipe = @recipe
+    byebug
     @signup.save
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
  end

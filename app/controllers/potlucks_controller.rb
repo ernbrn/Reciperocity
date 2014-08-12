@@ -44,7 +44,7 @@ class PotlucksController < ApplicationController
       redirect_to @potluck, :notice => "You are already a member of this Potluck"
    else
      if @potluck.invitees.include? current_user.email
-    current_user.potlucks << @potluck
+    @signup = PotluckSignup.create(user:current_user, potluck: @potluck)
     @potluck.invitees_will_change!
     @potluck.invitees.delete(current_user.email)
     @potluck.save
