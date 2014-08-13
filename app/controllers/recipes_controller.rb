@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :clone]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :remove_from_potluck, :clone_save, :clone]
   before_action :find_potluck, only: [:remove_from_potluck]
 
   # GET /recipes
@@ -9,8 +9,9 @@ class RecipesController < ApplicationController
   def show
     @ingredients = @recipe.ingredients
     @owner =  @recipe.owner
-    @owner_user = User.find(@recipe.owner)
+   @owner_user = User.find(@recipe.owner)
   end
+
 
   def index
     @recipe = Recipe.new
@@ -41,7 +42,17 @@ class RecipesController < ApplicationController
   end
 
   def clone
-    @recipe = Recipe.new(@recipe.attributes)
+    @new_recipe = @recipe.dup
+    @new_recipe.user = @recipe.user
+    @new_recipe.ingredients = @recipe.ingredients.map{|i| i.dup}
+  end
+
+  def clone_save
+    @new_recipe = @recipe.clean.dup
+    @new_recipe.update(recipe_params)
+    @new_recipe.owner = @recipe.owner
+    @new_recipe.save
+    redirect_to @new_recipe, :notice => "Recipe sucessfully variated!"
   end
 
   def tags
@@ -104,13 +115,13 @@ class RecipesController < ApplicationController
   end
 
   def remove_from_potluck
-    if (@recipe.potlucks.include? @potluck && @potluck.recipe_adder == current_user.id)
-      @recipe.potlucks.delete(@potluck)
-      redirect_to @recipe, :notice => "Ok! That recipe was removed from the potluck"
-    elsif @potluck.recipe_adder != current_user.id
-      redirect_to @recipe, :notice => "You do not have permission to do that"
+    @potluck = Potluck.find(params[:potluck_id])
+    @signup = PotluckSignup.find_by(user: current_user, potluck: @potluck)
+    if @signup.recipe == @recipe
+      @recipe.potluck_signups.delete(@signup.id)
+      redirect_to @recipe, :notice => "This recipe was removed from your potluck"
     else
-      redirect_to @recipe, :notice => "This recipe is not part of that potluck!"
+      redirect_to @recipe, :notice => "This recipe was not attending that potluck"
     end
   end
   private
