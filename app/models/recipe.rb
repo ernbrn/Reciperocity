@@ -20,4 +20,10 @@ class Recipe < ActiveRecord::Base
     self.instructions = instructions.split("\n")
   end
 
+  def clean
+   self.remove_picture!
+   self.remove_picture = true
+   self
+  end
+
 end

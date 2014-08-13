@@ -12,6 +12,8 @@ resources :recipes do
   get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag
   member do
   post 'send_email' => 'recipes#ingredient_email'
+  post :clone_save
+  get :clone
     end
 end
   match '/auth/:provider/callback' => 'authentications#create', via: [:get, :post]
@@ -36,6 +38,8 @@ end
  resources :recipes do
    member do
      post :add_to_potluck
+     post :remove_from_potluck
+     get :clone
    end
  end
 

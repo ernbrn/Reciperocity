@@ -2,12 +2,7 @@
   <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
 
 <div class="large-4 large-centered columns">
-<h1 class="recipe-link">New recipe</h1>
+<h1 class="recipe-link">New recipe variation</h1>
   </div>
-
-  <div class="row">
-
-<%= render 'form' %>
-    </div>
-
+  <%= render :partial => 'variation_form.html.erb'%>
     </div>
