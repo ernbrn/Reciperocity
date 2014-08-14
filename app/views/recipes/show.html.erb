@@ -12,8 +12,11 @@
        <%end%>
 
         </strong>
+        <%if @recipe.picture?%>
         <%= image_tag(@recipe.picture, class: "recipe-pic") %><br>
-
+      <%else%>
+        <%= holder_tag '350x260', @recipe.dish_name, 'dark', class: 'recipe-pic', id: 'holder' %>
+      <%end%>
         <% @recipe.tags.each do |tag|%>
 
             <%= link_to tag, tag_recipes_path(tag.name), class:"custom-label-class", id:'tag' %>
@@ -61,6 +64,7 @@
   <div id="remove-potluck-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title">Remove Recipe from one of your Potlucks</h2>
   <%= render partial: 'remove_from_potluck', object: @recipe%>
+  <br><br>
   <a class="close-reveal-modal">&#215;</a>
 
 

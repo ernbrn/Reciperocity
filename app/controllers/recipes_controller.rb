@@ -43,12 +43,12 @@ class RecipesController < ApplicationController
 
   def clone
     @new_recipe = @recipe.dup
-    @new_recipe.user = @recipe.user
+    @new_recipe.user = current_user
     @new_recipe.ingredients = @recipe.ingredients.map{|i| i.dup}
   end
 
   def clone_save
-    @new_recipe = @recipe.clean.dup
+    @new_recipe = @recipe.dup
     @new_recipe.update(recipe_params)
     @new_recipe.owner = @recipe.owner
     @new_recipe.save
