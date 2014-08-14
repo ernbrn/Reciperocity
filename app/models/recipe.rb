@@ -17,12 +17,14 @@ class Recipe < ActiveRecord::Base
   end
 
   def split_instructions
-    self.instructions = instructions.split("\n")
+    instructions = self.instructions
+    instructions = instructions.split("\n")
+    instructions
   end
 
   def clean
    self.remove_picture!
-   self.remove_picture = true
+   self.save
    self
   end
 

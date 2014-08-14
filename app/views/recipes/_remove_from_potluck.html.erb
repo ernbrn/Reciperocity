@@ -4,13 +4,18 @@
 
 
     <div class="field">
+      <%if current_user.potlucks.any?%>
     <%= label :potluck_ids, "Potluck" %><br>
     <%= collection_select @potlucks, :potluck_id, current_user.potlucks, :id, :name %>
+<div class="action">
+        <%= submit_tag "Remove!", class: "tiny button radius" %>
+      </div>
+
+  <%else%>
+    You don't have any potlucks
+  <%end%>
     </div>
 
 
 
-    <div class="action">
-        <%= submit_tag "Remove!", class: "tiny button radius" %>
-      </div>
-  <%end%>
+      <%end%>
