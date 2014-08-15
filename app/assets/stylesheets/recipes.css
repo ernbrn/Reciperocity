@@ -1,3 +1,9 @@
+.np{
+
+  height: 100px;
+  width: 100px;
+  fill: blue;
+}
 .recipe-pic{
    border-radius: 3%;
     postion: absolute;

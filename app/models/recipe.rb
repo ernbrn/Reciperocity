@@ -4,6 +4,8 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :user
   has_many :ingredients
+  has_many :cookbook_entries
+  has_many :cookbooks, through: :cookbook_entries
   has_many :potluck_signups
   has_many :potlucks, through: :potluck_signups
   accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
