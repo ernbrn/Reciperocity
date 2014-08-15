@@ -8,8 +8,28 @@
  </head>
 
   <body>
-    <%= image_tag 'potluck.png'%>
-      <%= yield %>
+<div class="row">
+  <div class="large-4 large-centered columns">
+<h1 class="page-title">Reciperocity</h1>
+     <%= form_tag recipes_path, :method => :get do %>
+        <p>
+        <%= text_field_tag :search, params[:search], :placeholder => "Search by Dish name or Ingredient" %>
+                <%= submit_tag "Search", :name => nil, class: 'button tiny radius', id: "search-button" %>
+              <% end %>
+
+
+  </div>
+  </div>
+<div id="user-modal" class="reveal-modal" data-reveal>
+  <%unless current_user == nil%>
+  <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
+   <%= render partial: 'users/in_options'%>
+  <a class="close-reveal-modal">&#215;</a>
+<%end%>
+</div>
+</body>
+
+     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
