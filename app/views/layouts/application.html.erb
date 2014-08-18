@@ -8,18 +8,7 @@
  </head>
 
   <body>
-<div class="row">
-  <div class="large-4 large-centered columns">
-<h1 class="page-title">Reciperocity</h1>
-     <%= form_tag recipes_path, :method => :get do %>
-        <p>
-        <%= text_field_tag :search, params[:search], :placeholder => "Search by Dish name or Ingredient" %>
-                <%= submit_tag "Search", :name => nil, class: 'button tiny radius', id: "search-button" %>
-              <% end %>
-   </div>
-  </div>
-
-      <%= yield %>
+     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

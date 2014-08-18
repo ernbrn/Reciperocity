@@ -2,8 +2,7 @@ class CookbooksController < ApplicationController
   before_action :find_cookbook, only: [:show, :update, :destroy]
 
   def index
-    @cookbooks = Cookbook.all
-    @recipe = Recipe.all
+    @cookbooks = current_user.cookbooks
   end
 
   def show

@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
     @ingredients = @recipe.ingredients
     @owner =  @recipe.owner
    @owner_user = User.find(@recipe.owner)
+   @potluck = Potluck.new
   end
 
 
