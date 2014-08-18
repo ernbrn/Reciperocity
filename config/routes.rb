@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+resources :cookbooks
 resources :users
 resources :photos
 resources :recipes do

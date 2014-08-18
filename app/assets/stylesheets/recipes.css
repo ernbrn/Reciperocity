@@ -1,11 +1,29 @@
-.np{
+.list-thumb{
+  padding: 0px;
+  margin: 0px;
+}
+.potluckpic{
+  height: 100px;
+  width: 100px;
+}
 
+#search{
+  position: relative;
+    height: 51px;
+    left: 270px;
+    font-size: 18px;
+}
+
+
+
+.np{
   height: 100px;
   width: 100px;
   fill: blue;
 }
+
+
 .recipe-pic{
-   border-radius: 3%;
     postion: absolute;
     vertical-align: middle;
 }
@@ -16,9 +34,21 @@
 }
 
 .recipe-pic-thumb{
-   border-radius: 5%;
     vertical-align: middle;
+    border-radius: 2%;
 }
+
+.overlay{
+  background: white;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  opacity:0;
+}
+
+.recipe-pic-thumb:hover .overlay{
+  opacity:1;
+}
+
 
 #recipe-dish-name{
   font-weight: bolder;
@@ -32,9 +62,13 @@
 .page-title {
     font-family: 'Satisfy', cursive;
     text-align: center;
+    margin: 20px;
 
 }
 
+.top-page{
+    color: black;
+}
 .recipe-link{
   font-family: 'Amatic SC', cursive;
     color: #0078a0;
