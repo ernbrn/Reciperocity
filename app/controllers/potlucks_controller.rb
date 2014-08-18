@@ -2,7 +2,7 @@ class PotlucksController < ApplicationController
   before_action :find_potluck, only: [:show, :edit, :update, :destroy, :attend, :invite_to]
   before_action :authenticate_user!
   def index
-    @potlucks = Potluck.all
+    @potlucks = current_user.potlucks
     @recipe = Recipe.new
     @potluck = Potluck.new
     @recipes = Recipe.all

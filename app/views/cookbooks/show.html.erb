@@ -1,0 +1,32 @@
+<body class="fonts">
+
+<div class="row">
+ <div class="large-6 columns large-left" id="recipe-block">
+        <strong>
+    <h1 class="recipe-link"><%=@cookbook.name%><br></h1>
+    <h3 class="recipe-link">Collection by: <%=@cookbook.user%><br></h1>
+        </strong>
+  </div>
+
+  <div class="row">
+  <div class="large-6 columns large-right" id="recipe-block">
+  <h1 class="page-title">Recipes</h1>
+  <%@cookbook_entries.each do |cookbook|%>
+    <%if cookbook.recipe%>
+  <%end%>
+<%end%>
+  </div>
+  </div>
+
+    <div class="row">
+<div class="large-6 columns large-left" id="recipe-block">
+      <h3 class="recipe-link">Your invitees:
+</div>
+<h3 class="recipe-link">People attending:</h3>
+<%@potluck.users.each do |user|%>
+<h3 class= "recipe-link"> <%= user.email %> <br> </h3>
+        <%end%>
+    <br></h1>
+</div>
+</div>
+      </body>
