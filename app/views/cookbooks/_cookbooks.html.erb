@@ -1,0 +1,13 @@
+<div class="large-12 columns large-center" id="recipe-block">
+  <ul class="large-block-grid-4">
+    <%cookbooks.each do |cookbook| %>
+        <%=link_to cookbook.name, cookbook_path(cookbook)%>
+        <br>
+        <br>
+
+    <% end %>
+    <br>
+    <br>
+    </li>
+  </ul>
+</div>
