@@ -1,5 +1,5 @@
 .sidebar{
-  position:absolute;
+  position:fixed;
   background-color: #95D1F0;
   height: 100%;
   bottom: 0px;
@@ -11,8 +11,8 @@
 }
 .potluckpic{
   position: relative;
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
  }
 
 .side-icons{
@@ -22,27 +22,32 @@
 
 #cookbook{
   position: relative;
-   height:90px;
-   width: 90px;
-   top: 30px;
+   top: 8px;
+   left: 9px;
+   height: 75px;
+   width: 75px;
+
 }
 
 
-#newicon{
+#settings{
   position: relative;
-  height: 90px;
-  width: 90px;
-  top: 130px;
+  top: 120px;
+  left: 10px;
+
 }
 
 #newrecipe{
   position: relative;
-  bottom: 10px;
+  bottom: 50px;
+  left: 10px;
 }
 
 #pot{
   position: relative;
-  top: 55px;
+  top: 60px;
+  left: 10px;
+
  }
 
 
@@ -91,6 +96,9 @@
   margin-left: 110px;
 }
 
+#sidebarheader{
+  color: white;
+}
 
 .page-title {
     font-family: 'Satisfy', cursive;

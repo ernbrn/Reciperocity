@@ -44,21 +44,21 @@
     </div>
 
   <div class="large-1 large-left columns sidebar" id="cutlery">
+    <h3 class="page-title" id="sidebarheader">Dig in!</h3>
     <div class="side-icons">
-   <span data-tooltip class="tip-right" title="Make a New Recipe">
+ <span data-tooltip class="tip-right" title="Add a Recipe">
  <%= link_to (image_tag 'recipe.png', class:'potluckpic', id:"newrecipe"), root_path%>
     </span>
 
-  <span data-tooltip class="tip-right" title="Add To Cookbook">
-      <%= link_to (image_tag 'cookbook.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic' %>
+    <span data-tooltip class="tip-right" title="Add To Cookbook">
+      <%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic' %>
       </span>
-      <span data-tooltip class="tip-right" title="Make a New Potluck">
-      <%= link_to (image_tag 'slice1.png', class:'potluckpic', id: "pot"), root_path%>
-      </span>
+      <span data-tooltip class="tip-right" title="Make a New Potluck"> <%= link_to (image_tag 'slice1.png', class:'potluckpic', id: "pot"), root_path%></span>
+
     <span data-tooltip class="tip-right" title="Table Settings">
-<%= link_to (image_tag 'settings.png', class:'potluckpic', id:'newicon', data: {:'reveal-id' => 'user-modal'}, title: "New Recipe") %>
+<%= link_to (image_tag 'settings.png', class:'potluckpic', id:'settings', data: {:'reveal-id' => 'user-modal'}) %>
 </span>
- <br>
+
  </div>
   </div>
 
