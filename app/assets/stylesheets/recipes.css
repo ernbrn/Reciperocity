@@ -1,6 +1,6 @@
 .sidebar{
   position:absolute;
-  background-color: black;
+  background-color: #95D1F0;
   height: 100%;
   bottom: 0px;
   left:0px;
@@ -15,20 +15,34 @@
   width: 90px;
  }
 
+.side-icons{
+  position:relative;
+  top: 80px;
+ }
+
 #cookbook{
+  position: relative;
    height:90px;
    width: 90px;
+   top: 30px;
 }
 
 
 #newicon{
+  position: relative;
   height: 90px;
   width: 90px;
+  top: 130px;
+}
+
+#newrecipe{
+  position: relative;
+  bottom: 10px;
 }
 
 #pot{
   position: relative;
-  top: 10px;
+  top: 55px;
  }
 
 

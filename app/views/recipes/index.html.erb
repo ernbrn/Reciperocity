@@ -38,29 +38,29 @@
         <div class="row collapse">
           <%= text_field_tag :search, params[:search], class: "search", :placeholder => "Search by Dish name or Ingredient", :autocomplete => :off %>
           </div>
-<div class="large-3 large-centered columns">
            <%= submit_tag "Search", :name => nil, class: 'button gogo' %>
            <% end %>
-     </div>
       </div>
     </div>
 
-<div class="row">
   <div class="large-1 large-left columns sidebar" id="cutlery">
-    <span data-tooltip class="tip-left" title="Make a New Potluck">
-      <%= link_to (image_tag 'pot.png', class:'potluckpic', id: "pot"), root_path%>
+    <div class="side-icons">
+   <span data-tooltip class="tip-right" title="Make a New Recipe">
+ <%= link_to (image_tag 'recipe.png', class:'potluckpic', id:"newrecipe"), root_path%>
     </span>
-    <span data-tooltip class="tip-left" title="Add To Cookbook">
-      <%= link_to (image_tag 'cookbook2.png', id:'cookbook'), '#', class:'potluckpic' %>
-    </span>
-    <span data-tooltip class="tip-left" title="Table Settings">
-<%= link_to (image_tag 'settings1.png', id:'newicon', data: {:'reveal-id' => 'user-modal'}, title: "New Recipe") %>
+
+  <span data-tooltip class="tip-right" title="Add To Cookbook">
+      <%= link_to (image_tag 'cookbook.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic' %>
+      </span>
+      <span data-tooltip class="tip-right" title="Make a New Potluck">
+      <%= link_to (image_tag 'slice1.png', class:'potluckpic', id: "pot"), root_path%>
+      </span>
+    <span data-tooltip class="tip-right" title="Table Settings">
+<%= link_to (image_tag 'settings.png', class:'potluckpic', id:'newicon', data: {:'reveal-id' => 'user-modal'}, title: "New Recipe") %>
 </span>
  <br>
+ </div>
   </div>
-   </div>
-
-
 
 
 <div class="row" id="index-partial">
