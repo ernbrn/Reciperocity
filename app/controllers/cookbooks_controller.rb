@@ -6,6 +6,7 @@ class CookbooksController < ApplicationController
   end
 
   def show
+    @recipes = @cookbook.recipes
   end
 
   def new
@@ -14,6 +15,9 @@ class CookbooksController < ApplicationController
 
   def create
     @cookbook = Cookbook.new(cookbook_params)
+    @entry = CookbookEntry.create(cookbook:@cookbook)
+    @entry.save
+    @cookbook.user = current_user
 
     respond_to do |format|
       if @cookbook.save
@@ -35,7 +39,7 @@ class CookbooksController < ApplicationController
   end
 
   def cookbook_params
-    params.requre(:cookbook).permit(:cookbook_entry_ids)
+    params.require(:cookbook).permit(:cookbook_entry_ids, :name)
   end
 
 

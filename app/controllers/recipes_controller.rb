@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :remove_from_potluck, :clone_save, :clone]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :remove_from_potluck, :clone_save, :clone, :add_to_cookbook]
   before_action :find_potluck, only: [:remove_from_potluck]
 
   # GET /recipes
@@ -9,13 +9,14 @@ class RecipesController < ApplicationController
   def show
     @ingredients = @recipe.ingredients
     @owner =  @recipe.owner
-   @owner_user = User.find(@recipe.owner)
-   @potluck = Potluck.new
+    @owner_user = User.find(@recipe.owner)
+    @potluck = Potluck.new
   end
 
 
   def index
     @recipe = Recipe.new
+    @cookbook = Cookbook.new
     @recipes = Recipe.all
     @potluck = Potluck.new
     @user = User.new
@@ -114,6 +115,19 @@ class RecipesController < ApplicationController
     redirect_to @recipe, :notice => "Recipe Added to Potluck"
  end
   end
+
+  def add_to_cookbook
+   @cookbook = Cookbook.find(params[:cookbook_id])
+   @entry = CookbookEntry.find_by(cookbook: @cookbook)
+   if @cookbook.recipes.include? @recipe
+     redirect_to @recipe, :notice => "It appears that this recipe is already a part of that cookbook."
+   else
+    @entry.recipe = @recipe
+    @entry.save
+    redirect_to @recipe, :notice => "Recipe Added to Cookbook"
+   end
+  end
+
 
   def remove_from_potluck
     @potluck = Potluck.find(params[:potluck_id])

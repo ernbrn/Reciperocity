@@ -1,0 +1,20 @@
+<body class="fonts">
+<div class="large-6 large-centered columns">
+  <%= form_tag({controller: "recipes", action: "add_to_cookbook"}, method: "post") do %>
+
+
+    <div class="field">
+      <%if current_user.cookbooks.any?%>
+    <%= label :cookbook_ids, "Cookbooks" %><br>
+    <%= collection_select @cookbooks, :cookbook_id, current_user.cookbooks, :id, :name %>
+<div class="action">
+        <%= submit_tag "Add!", class: "tiny button radius" %>
+      </div>
+  <%else%>
+    You don't have any cookbooks
+  <%end%>
+</div>
+
+
+
+      <%end%>

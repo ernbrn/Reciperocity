@@ -6,7 +6,6 @@ class PotlucksController < ApplicationController
     @recipe = Recipe.new
     @potluck = Potluck.new
     @recipes = Recipe.all
-
   end
 
   def show

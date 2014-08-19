@@ -1,13 +1,10 @@
 class PotluckSignupsController < ApplicationController
   before_action :find_signup, only: [:show, :destroy, :update]
 
-
   def index
-
   end
 
   def show
-
   end
 
   def new

@@ -39,6 +39,7 @@ end
  resources :recipes do
    member do
      post :add_to_potluck
+     post :add_to_cookbook
      post :remove_from_potluck
      get :clone
    end
