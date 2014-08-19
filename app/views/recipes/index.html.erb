@@ -1,3 +1,6 @@
+<%content_for :header do%>
+  <%= link_to "Reciperocity", root_path, class:'top-page' %>
+<%end%>
 <%if current_user.nil?%>
 <div class="row">
   <div class="large-4 large-centered columns">
@@ -28,30 +31,27 @@
   </div>
 <%end%>
 <%if current_user != nil%>
-<div class="row">
-  <div class="large-4 large-centered columns">
-    <h1 class="page-title"><%= link_to 'Reciperocity', root_path, :class => 'top-page' %></h1>
-      </div>
-    </div>
-     <%= form_tag recipes_path, :method => :get do %>
+ <%= form_tag recipes_path, :method => :get do %>
         <div class="row">
           <div class="large-4 columns">
         <div class="row collapse">
           <%= text_field_tag :search, params[:search], class: "search", :placeholder => "Search by Dish name or Ingredient", :autocomplete => :off %>
           </div>
-          <div class="large-3 large-centered columns">
+<div class="large-3 large-centered columns">
            <%= submit_tag "Search", :name => nil, class: 'button gogo' %>
            <% end %>
-        </div>
+     </div>
       </div>
     </div>
 
 <body>
 <div class="row">
-  <div class="large-1 columns large-centered" id="cutlery">
-  <%= link_to (image_tag 'potluck.png', class: 'potluckpic'), root_path  %><br><br><br>
+  <div class="large-1 columns sidebar" id="cutlery">
+    <%= link_to (image_tag 'pot.png', class:'potluckpic', id: "pot"), root_path  %>
+  <%= link_to (image_tag 'cookbook2.png', id:'cookbook'), '#', class:'potluckpic' %>
 
-  <%= link_to content_tag(:i, nil, class: "fa fa-child fa-5x"), "#", data: {:'reveal-id' => 'user-modal'} %><br><br><br>
+  <%= link_to (image_tag 'settings1.png', id:'newicon', data: {:'reveal-id' => 'user-modal'}, title: "New Recipe") %>
+
 
 
  <br>
@@ -84,6 +84,13 @@
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
+<div id="cookbook-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Cookbook</h2>
+  <%= render partial: 'cookbooks/form', object: @cookbook%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
-</body>
+
+
 <%end%>
+</body>

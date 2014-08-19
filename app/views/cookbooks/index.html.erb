@@ -1,4 +1,7 @@
 <body>
+  <%content_for :header do%>
+    Your Cookbooks
+  <%end%>
 <div class="row" id="index-partial">
   <div class="large-12 large-centered columns">
   <%= render :partial => 'cookbooks', :object => @cookbooks %>

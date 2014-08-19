@@ -2,13 +2,23 @@
 <html lang="en">
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Reciperocity" %></title>
-    <%= stylesheet_link_tag    "application" %>
+    <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <link href="css/hover.css" rel="stylesheet" media="all">
+
  </head>
 
   <body>
-     <%= yield %>
+    <div class="row">
+  <div class="large-4 large-centered columns">
+    <h1 class="page-title"><%= yield :header %></h1>
+      </div>
+    </div>
+      <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

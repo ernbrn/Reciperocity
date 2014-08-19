@@ -1,8 +1,9 @@
-
+<%content_for :header do%>
+  Your Potlucks
+<%end%>
 <body>
 <div class="row" id="index-partial">
   <div class="large-12 large-centered columns">
-    <h2 class="page-title"> Your Potlucks </h2>
   <%= render :partial => 'potluck', :object => @potlucks %>
   </div>
   </div>
