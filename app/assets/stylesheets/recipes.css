@@ -1,7 +1,9 @@
 .sidebar{
+  position:absolute;
   background-color: black;
   height: 100%;
   bottom: 0px;
+  left:0px;
 }
 .list-thumb{
   padding: 0px;
@@ -13,7 +15,7 @@
   width: 90px;
  }
 
- #cookbook{
+#cookbook{
    height:90px;
    width: 90px;
 }
@@ -79,8 +81,12 @@
 .page-title {
     font-family: 'Satisfy', cursive;
     text-align: center;
-    margin: 20px;
+    margin: 8px;
 
+}
+
+.sidebarlink{
+  text-decoration: underline;
 }
 
 .top-page{
