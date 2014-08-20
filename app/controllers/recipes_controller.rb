@@ -17,15 +17,11 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new
     @cookbook = Cookbook.new
-    @recipes = Recipe.all
+    @recipes = Recipe.text_search(params[:search])
     @potluck = Potluck.new
     @potlucks = Potluck.all
     @user = User.new
     @users = User.all
-    @search = Recipe.search do
-          fulltext params[:search]
-    end
-    @recipes = @search.results
   end
 
 

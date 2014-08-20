@@ -11,17 +11,18 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
 
 
-  searchable do
-   text :dish_name
-    text :ingredients do
-      ingredients.map {|ingredient| ingredient.name}
-    end
-  end
-
   def split_instructions
     instructions = self.instructions
     instructions = instructions.split("\n")
     instructions
+  end
+
+  def self.text_search(query)
+    if query.present?
+      where("dish_name @@ :q", q: query)
+    else
+      Recipe.all
+    end
   end
 
   def clean
