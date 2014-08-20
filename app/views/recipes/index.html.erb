@@ -43,33 +43,15 @@
       </div>
     </div>
 
-  <div class="large-1 large-left columns sidebar" id="cutlery">
-    <h3 class="page-title" id="sidebarheader">Dig in!</h3>
-    <div class="side-icons">
-
- <span data-tooltip class="tip-right" id="newrecipe" title="Recipes">
-   <%= link_to (image_tag 'recipe.png', class:'potluckpic', data: {:'reveal-id' => 'recipe-options-modal'}), root_path%>
-    </span>
-
-    <span data-tooltip class="tip-right" title="Cookbooks">
-      <%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic', data: {:'reveal-id'=>'cookbook-options-modal'} %>
-      </span>
-      <span data-tooltip class="tip-right" id="pot" title="Potlucks"> <%= link_to (image_tag 'slice1.png', class:'potluckpic' ), "#", data: {:'reveal-id'=> 'potluck-options-modal'}%></span>
-
-    <span data-tooltip class="tip-right" id="settings" title="Table Settings">
-<%= link_to (image_tag 'settings.png', class:'potluckpic', data: {:'reveal-id' => 'user-modal'}) %>
-</span>
-
- </div>
-  </div>
-
-
 <div class="row" id="index-partial">
   <div class="large-12 large-centered columns">
   <%= render :partial => 'recipes', :object => @recipes %>
   </div>
   </div>
 </body>
+<%content_for :settings_options do%>
+  <%'user-modal'%>
+<%end%>
 <div id="user-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
    <%= render partial: 'users/in_options'%>
@@ -84,17 +66,26 @@
   <a class="close-reveal-modal">&#215;</a>
   </div>
 
+  <%content_for :recipe_options do%>
+    <%'recipe-options-modal'%>
+ <%end%>
   <div id="recipe-options-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title"></h2>
   <%= render partial: 'recipe_options'%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
+<%content_for :cookbook_options do%>
+  <%'cookbook-options-modal'%>
+<%end%>
 <div id="cookbook-options-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title"></h2>
   <%= render partial: 'cookbooks/cookbook_options'%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
+
+<%content_for :potluck_options do%>
+<%end%>
 
 <div id="potluck-options-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title">Potlucks</h2>

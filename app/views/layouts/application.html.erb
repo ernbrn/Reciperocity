@@ -18,6 +18,31 @@
     <h1 class="page-title"><%= yield :header %></h1>
       </div>
     </div>
+  <div class="large-1 large-left columns sidebar" id="cutlery">
+    <h3 class="page-title" id="sidebarheader">Dig in!</h3>
+    <div class="side-icons">
+
+ <span data-tooltip class="tip-right" id="newrecipe" title="Recipes">
+   <%=%>
+   <%= link_to (image_tag 'recipe.png', class:'potluckpic', data: {:'reveal-id' => 'recipe-options-modal'}), root_path%>
+    </span>
+
+    <span data-tooltip class="tip-right" title="Cookbooks">
+<%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic', data: {:'reveal-id'=>'cookbook-options-modal' } %>
+      </span>
+      <span data-tooltip class="tip-right" id="pot" title="Potlucks"> 
+ <%= link_to (image_tag 'slice1.png', class:'potluckpic' ), "#", data: {:'reveal-id'=> 'potluck-options-modal'}%>
+      </span>
+
+    <span data-tooltip class="tip-right" id="settings" title="Table Settings">
+<%= link_to (image_tag 'settings.png', class:'potluckpic', data: {:'reveal-id' => (yield :settings_options)}) %>
+</span>
+
+ </div>
+  </div>
+
+
+
       <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
