@@ -18,6 +18,7 @@
     <h1 class="page-title"><%= yield :header %></h1>
       </div>
     </div>
+<%unless current_user.nil?%>
   <div class="large-1 large-left columns sidebar" id="cutlery">
     <h3 class="page-title" id="sidebarheader"><%=link_to 'Dig in!', root_path, id:'dig-in' %></h3>
     <div class="side-icons">
@@ -30,7 +31,7 @@
     <span data-tooltip class="tip-right" title="Cookbooks">
 <%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic', data: {:'reveal-id'=>'cookbook-options-modal' } %>
       </span>
-      <span data-tooltip class="tip-right" id="pot" title="Potlucks"> 
+      <span data-tooltip class="tip-right" id="pot" title="Potlucks">
  <%= link_to (image_tag 'slice1.png', class:'potluckpic' ), "#", data: {:'reveal-id'=> 'potluck-options-modal'}%>
       </span>
 
@@ -69,7 +70,7 @@
  </div>
   </div>
 
-
+<%end%>
 
       <%= yield %>
     <%= javascript_include_tag "application" %>
