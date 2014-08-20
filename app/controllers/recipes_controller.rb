@@ -19,6 +19,7 @@ class RecipesController < ApplicationController
     @cookbook = Cookbook.new
     @recipes = Recipe.all
     @potluck = Potluck.new
+    @potlucks = Potluck.all
     @user = User.new
     @users = User.all
     @search = Recipe.search do
