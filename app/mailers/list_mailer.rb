@@ -1,5 +1,5 @@
 class ListMailer < ActionMailer::Base
-  default from: "ernbrn@driesbach.us"
+  default from: "ernbrn@dreisbach.us"
 
   def groceries(user, recipe, email)
     @user = user
