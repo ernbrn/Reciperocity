@@ -15,11 +15,33 @@
   width: 70px;
  }
 
+.r-o{
+  position:relative;
+  left: 5px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.c-o{
+  position:relative;
+  left: 120px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.text-link{
+  font-size:30px;
+}
+
+
 .side-icons{
   position:relative;
   top: 80px;
  }
 
+.about{
+  text-align: center;
+}
 #cookbook{
   position: relative;
    top: 8px;
@@ -28,7 +50,10 @@
    width: 75px;
 
 }
-
+.signout{
+  position: relative;
+  left: 150px;
+}
 
 #settings{
   position: relative;
@@ -70,7 +95,7 @@
 }
 
 #thumb-name{
-  font-size: 30px;
+  font-size: 35px;
 
 }
 
@@ -116,7 +141,7 @@
 }
 .recipe-link{
   font-family: 'Amatic SC', cursive;
-    color: #0078a0;
+  color: #0078a0;
 }
 
 #holder{

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <%= link_to "Make a New Cookbook", '#', data: {:'reveal-id' => 'cookbook-modal'}, class:'recipe-link c-o' %><br><br>
+<dl class="accordion" data-accordion>
+<dd class="accordion-navigation about">
+<a href="#panel1" class:'recipe-pic'>Your Cookbooks</a>
+<div id="panel1" class="content">
+  <%current_user.cookbooks.each do |cookbook|%>
+    <%=link_to cookbook.name, cookbook_path(cookbook), class:'recipe-link text-link'%>
+    <br>
+  <%end%>
+</div>
+</div>
+</div>
