@@ -1,13 +1,10 @@
-.sidebar{
-  position:fixed;
-  background-color: #95D1F0;
-  height: 100%;
-  bottom: 0px;
-  left:0px;
-}
 .list-thumb{
   padding: 0px;
   margin: 0px;
+}
+.email{
+  position: relative;
+  left: 300px;
 }
 .potluckpic{
   position: relative;
@@ -24,13 +21,9 @@
 
 .c-o{
   position:relative;
-  left: 120px;
+  left: 10px;
   text-align: center;
   font-size: 40px;
-}
-
-.text-link{
-  font-size:30px;
 }
 
 
@@ -139,11 +132,6 @@
 .top-page{
     color: black;
 }
-.recipe-link{
-  font-family: 'Amatic SC', cursive;
-  color: #0078a0;
-}
-
 #holder{
   opacity: 0.5;
 }

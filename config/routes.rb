@@ -41,6 +41,7 @@ end
      post :add_to_potluck
      post :add_to_cookbook
      post :remove_from_potluck
+     post :remove_from_cookbook
      get :clone
    end
  end

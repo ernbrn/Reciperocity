@@ -1,14 +1,47 @@
 <div class="row">
   <div class="large-6 large-centered columns">
-    <%= link_to "Make a New Potluck", '#', data: {:'reveal-id' => 'potluck-modal'}, class:'recipe-link c-o' %><br><br>
-<dl class="accordion" data-accordion>
+    <dl class="accordion" data-accordion>
+      <dd class="accordion-navigation about">
+<a href="#panel4">New</a>
+<div id="panel4" class="content active">
+
+    <%= link_to "Make a New Potluck", '#', data: {:'reveal-id' => 'potluck-modal'}, class:'recipe-link c-o' %>
+</div>
+</dd>
+
 <dd class="accordion-navigation about">
-<a href="#panel1" class:'recipe-pic'>Your Potlucks</a>
+<a href="#panel1" class:'recipe-pic'>Potlucks You're Organizing</a>
 <div id="panel1" class="content">
+  <%current_user.potlucks.each do |potluck|%>
+    <%if potluck.users.first == current_user%>
+    <%=link_to potluck.name, potluck_path(potluck), class:'recipe-link text-link'%>
+  <%end%>
+    <br>
+  <%end%>
+</div>
+<dd class="accordion-navigation about">
+<a href="#panel2">Potlucks You're Attending</a>
+<div id="panel2" class="content">
   <%current_user.potlucks.each do |potluck|%>
     <%=link_to potluck.name, potluck_path(potluck), class:'recipe-link text-link'%>
     <br>
   <%end%>
+
 </div>
+</dd>
+<dd class="accordion-navigation about">
+<a href="#panel3">Potlucks You're Invited To</a>
+<div id="panel3" class="content">
+  <%@potlucks.each do |potluck|%>
+    <%if potluck.invitees?%>
+      <%if potluck.invitees.include? current_user.email%>
+        <%=link_to potluck.name, potluck_path(potluck)%>
+      <%end%>
+    <%end%>
+  <%end%>
+</div>
+</dd>
+</dl>
+
 </div>
 </div>
