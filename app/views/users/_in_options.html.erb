@@ -1,8 +1,30 @@
 <div class="row">
   <div class="large-6 large-centered columns">
-<%= link_to content_tag(:i, "   Sign out", class: "fa fa-times fa-2x"), destroy_user_session_path, :method => :delete%><br><br>
-<%= link_to content_tag(:i, "   Make a new Recipe", class: "fa fa-spoon fa-2x"), "#", data: {:'reveal-id' => 'recipe-modal'} %><br><br>
-      <%= link_to content_tag(:i, "   Make a new Potluck", class: "fa fa-cutlery fa-2x"), "#", data: {:'reveal-id' => 'potluck-modal'} %>
-    <%= link_to content_tag(:i, "   Make a new Cookbook", class: "fa fa-cutlery fa-2x"), "#", data: {:'reveal-id' => 'cookbook-modal'} %>
+<%= link_to content_tag(:i, "   Sign out", class: "fa fa-times fa-2x"), destroy_user_session_path, :method => :delete, class:'signout'%><br><br>
+<dl class="accordion" data-accordion>
+<dd class="accordion-navigation about">
+<a href="#panel1">About Reciperocity</a>
+<div id="panel1" class="content">
+  Reciperocity is delicious app borne of the Iron Yard's Ruby on Rails code wizard <a href = www.ern-brn.com>Erin Brown</a>.
+</div>
+<dd class="accordion-navigation about">
+<a href="#panel2">Acknowledgements</a>
+<div id="panel2" class="content">
+  There were a variety of <a href="https://github.com/ernbrn/Reciperocity/blob/master/Gemfile">gems</a> that made my life exceedingly easier. Thank you to all those code wizards.
+</div>
+</dd>
+<dd class="accordion-navigation about">
+<a href="#panel3">Icons</a>
+<div id="panel3" class="content">
+  All the icons on the site came from the great site <a href="http://thenounproject.com/">The Noun Project</a>.<br>
+  Thanks to the following great artists:<br>
+  <ul>
+    Cookbook by Marcella Cigarini<br>
+    Cooking Pot by Jennifer Cozzette<br>
+    Place Setting by Scott Lewis<br>
+  </ul>
+</div>
+</dd>
+</dl>
  </div>
 </div>
