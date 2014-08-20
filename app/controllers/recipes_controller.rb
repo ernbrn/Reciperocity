@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :remove_from_potluck, :clone_save, :clone, :add_to_cookbook]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :add_to_potluck, :remove_from_potluck, :clone_save, :clone, :add_to_cookbook, :remove_from_cookbook]
   before_action :find_potluck, only: [:remove_from_potluck]
 
   # GET /recipes
@@ -128,6 +128,17 @@ class RecipesController < ApplicationController
     redirect_to @recipe, :notice => "Recipe Added to Cookbook"
    end
   end
+
+ def remove_from_cookbook
+    @cookbook = Cookbook.find(params[:cookbook_id])
+    @entry = CookbookEntry.find_by(cookbook: @cookbook)
+    if @entry.recipe == @recipe
+      @recipe.cookbook_entries.delete(@entry.id)
+      redirect_to @recipe, :notice => "This recipe was removed from your cookbook"
+    else
+      redirect_to @recipe, :notice => "This recipe was not attending that cookbook"
+    end
+ end
 
 
   def remove_from_potluck

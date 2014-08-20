@@ -49,15 +49,7 @@
   </div>
   </div>
 </body>
-<%content_for :settings_options do%>
-  <%'user-modal'%>
-<%end%>
-<div id="user-modal" class="reveal-modal" data-reveal>
-  <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
-   <%= render partial: 'users/in_options'%>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-    </div>
+   </div>
 
    </div>
 <div id="recipe-modal" class="reveal-modal" data-reveal>
@@ -66,33 +58,21 @@
   <a class="close-reveal-modal">&#215;</a>
   </div>
 
-  <%content_for :recipe_options do%>
-    <%'recipe-options-modal'%>
+<%content_for :recipe_options do%>
+    <%= render partial: 'recipe_options'%>
  <%end%>
-  <div id="recipe-options-modal" class="reveal-modal" data-reveal>
-  <h2 class="page-title"></h2>
-  <%= render partial: 'recipe_options'%>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
 
-<%content_for :cookbook_options do%>
-  <%'cookbook-options-modal'%>
+ <%content_for :cookbook_options do%>
+  <% render partial: 'cookbooks/cookbook_options'%>
 <%end%>
-<div id="cookbook-options-modal" class="reveal-modal" data-reveal>
-  <h2 class="page-title"></h2>
-  <%= render partial: 'cookbooks/cookbook_options'%>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
 
 <%content_for :potluck_options do%>
+  <% render partial: 'potlucks/potluck_options'%>
 <%end%>
 
-<div id="potluck-options-modal" class="reveal-modal" data-reveal>
-  <h2 class="page-title">Potlucks</h2>
-  <%= render partial: 'potlucks/potluck_options'%>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
+<%content_for :settings_options do%>
+   <% render partial: 'users/in_options'%>
+<%end%>
 
 
 <div id="potluck-modal" class="reveal-modal" data-reveal>

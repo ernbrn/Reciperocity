@@ -20,7 +20,9 @@
 @import url(http://fonts.googleapis.com/css?family=Satisfy);
 
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
-
+#dig-in{
+  color: white;
+}
 .sidebar{
   position:fixed;
   background-color: #95D1F0;
@@ -42,6 +44,16 @@
 #tag{
     color: black;
 }
+
+.text-link{
+  font-size:30px;
+}
+.recipe-link{
+  font-family: 'Amatic SC', cursive;
+  color: #0078a0;
+}
+
+
 
 
 

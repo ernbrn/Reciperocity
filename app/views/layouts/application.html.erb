@@ -19,7 +19,7 @@
       </div>
     </div>
   <div class="large-1 large-left columns sidebar" id="cutlery">
-    <h3 class="page-title" id="sidebarheader">Dig in!</h3>
+    <h3 class="page-title" id="sidebarheader"><%=link_to 'Dig in!', root_path, id:'dig-in' %></h3>
     <div class="side-icons">
 
  <span data-tooltip class="tip-right" id="newrecipe" title="Recipes">
@@ -35,8 +35,36 @@
       </span>
 
     <span data-tooltip class="tip-right" id="settings" title="Table Settings">
-<%= link_to (image_tag 'settings.png', class:'potluckpic', data: {:'reveal-id' => (yield :settings_options)}) %>
+<%= link_to (image_tag 'settings.png', class:'potluckpic', data: {:'reveal-id' => 'user-modal' }) %>
 </span>
+
+<div id="recipe-options-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title"></h2>
+  <%=yield :recipe_options %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="cookbook-options-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title"></h2>
+  <%= yield :cookbook_options %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="user-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
+   <%=yield :settings_options%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<div id="potluck-options-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">Potlucks</h2>
+  <%= yield :potluck_options %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+
 
  </div>
   </div>
