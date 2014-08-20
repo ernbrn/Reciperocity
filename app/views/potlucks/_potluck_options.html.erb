@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <%= link_to "Make a New Potluck", '#', data: {:'reveal-id' => 'potluck-modal'}, class:'recipe-link c-o' %><br><br>
+<dl class="accordion" data-accordion>
+<dd class="accordion-navigation about">
+<a href="#panel1" class:'recipe-pic'>Your Potlucks</a>
+<div id="panel1" class="content">
+  <%current_user.potlucks.each do |potluck|%>
+    <%=link_to potluck.name, potluck_path(potluck), class:'recipe-link text-link'%>
+    <br>
+  <%end%>
+</div>
+</div>
+</div>

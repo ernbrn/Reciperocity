@@ -52,9 +52,9 @@
     </span>
 
     <span data-tooltip class="tip-right" title="Cookbooks">
-      <%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic' %>
+      <%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic', data: {:'reveal-id'=>'cookbook-options-modal'} %>
       </span>
-      <span data-tooltip class="tip-right" id="pot" title="Potlucks"> <%= link_to (image_tag 'slice1.png', class:'potluckpic' ), root_path%></span>
+      <span data-tooltip class="tip-right" id="pot" title="Potlucks"> <%= link_to (image_tag 'slice1.png', class:'potluckpic' ), "#", data: {:'reveal-id'=> 'potluck-options-modal'}%></span>
 
     <span data-tooltip class="tip-right" id="settings" title="Table Settings">
 <%= link_to (image_tag 'settings.png', class:'potluckpic', data: {:'reveal-id' => 'user-modal'}) %>
@@ -85,10 +85,24 @@
   </div>
 
   <div id="recipe-options-modal" class="reveal-modal" data-reveal>
-  <h2 class="page-title">Recipes</h2>
+  <h2 class="page-title"></h2>
   <%= render partial: 'recipe_options'%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
+
+<div id="cookbook-options-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title"></h2>
+  <%= render partial: 'cookbooks/cookbook_options'%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="potluck-options-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title"></h2>
+  <%= render partial: 'potlucks/potluck_options'%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
 
 <div id="potluck-modal" class="reveal-modal" data-reveal>
   <h2 class="page-title">New Potluck</h2>
