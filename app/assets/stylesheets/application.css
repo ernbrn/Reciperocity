@@ -52,8 +52,49 @@
   font-family: 'Amatic SC', cursive;
   color: #0078a0;
 }
-
-
-
+.noticed{
+  text-align: center;
+  font-size: 25px;
+}
+.top-thing{
+  height:65px;
+}
+.loggedout{
+  background-image: url("grapefruit3.jpg");
+  background-size: cover;
+}
+.bubble{
+  position:relative;
+  background-color:white;
+  opacity: 0.9;
+  border-radius: 2%;
+  height: 400px;
+  width: 800px;
+}
+#recitop{
+  position:relative;
+  font-size: 70px;
+  top:25px;
+  color: white;
+}
+#bringit{
+  position: relative;
+  font-size: 30px;
+  top: 10px;
+  color: white;
+}
+.log-button{
+  position: relative;
+  top: 40px;
+  left: 80px;
+}
+#login-whole{
+  position:relative;
+  top:40px;
+}
+#bf{
+  font-family: 'Satisfy';
+  font-size: 25px;
+}
 
 

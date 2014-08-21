@@ -1,0 +1,35 @@
+<%if current_user.nil?%>
+  <div id="login-whole">
+  <div class="row">
+    <div class="large-10 large-centered columns">
+        <h1 class="top-page page-title" id="recitop"> Reciperocity</h1>
+      <h4 class="page-title" id="bringit">Bring it to the Table</h4>
+     </div>
+   </div>
+
+     <div class="row log-button">
+       <div class="large-4 large-centered columns">
+     <h4><%= link_to "Sign in", "#", data: {:'reveal-id' => 'sign-in-modal'}, class:'button secondary', id:'bf'%></h4>
+     <br>
+     <h4><%= link_to "Sign up", "#", data: {:'reveal-id' => 'sign-up-modal'}, class: 'button secondary', id:'bf'%></h4>
+   </div>
+ </div>
+</div>
+
+
+
+            <div id="sign-in-modal" class="reveal-modal small" data-reveal>
+              <%= render partial: 'devise/sessions/new'%>
+              <a class="close-reveal-modal">&#215;</a>
+            </div>
+
+            <div id="sign-up-modal" class="reveal-modal small" data-reveal>
+              <%= render partial: 'registrations/new'%>
+              <a class="close-reveal-modal">&#215;</a>
+            </div>
+          </div>
+          <a class="close-reveal-modal">&#215;</a>
+        </div>
+  </div>
+<%end%>
+

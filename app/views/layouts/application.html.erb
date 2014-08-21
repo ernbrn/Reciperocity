@@ -2,8 +2,19 @@
 <html lang="en">
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Reciperocity" %></title>
-    <p class="notice:"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <%if notice%>
+    <div data-alert class="large-4 large-centered columns alert-box top-thing">
+    <p class="noticed notice:"><%= notice %></p>
+      <a href="#" class="close">&times;</a>
+  </div>
+     <%end%>
+     <%if alert%>
+     <div data-alert class="large-4 large-centered columns alert-box alert">
+        <p class="alert noticed"><%= alert %></p>
+          <a href="#" class="close">&times;</a>
+      </div>
+    <%end%>
+    </div>
 
      <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,19 +24,21 @@
  </head>
 
   <body>
+<%unless current_user.nil?%>
     <div class="row">
   <div class="large-4 large-centered columns">
     <h1 class="page-title"><%= yield :header %></h1>
       </div>
     </div>
-<%unless current_user.nil?%>
   <div class="large-1 large-left columns sidebar" id="cutlery">
     <h3 class="page-title" id="sidebarheader"><%=link_to 'Dig in!', root_path, id:'dig-in' %></h3>
     <div class="side-icons">
 
  <span data-tooltip class="tip-right" id="newrecipe" title="Recipes">
-   <%=%>
-   <%= link_to (image_tag 'recipe.png', class:'potluckpic', data: {:'reveal-id' => 'recipe-options-modal'}), root_path%>
+   <a href="#" data-options="align:right" data-dropdown="drop"><%=image_tag 'recipe.png'%></a>
+   <ul id="drop" class="large content f-dropdown" data-dropdown-content>
+     <%=render partial: 'recipes/recipe_options'%>
+   </ul>
     </span>
 
     <span data-tooltip class="tip-right" title="Cookbooks">
@@ -39,7 +52,7 @@
 <%= link_to (image_tag 'settings.png', class:'potluckpic', data: {:'reveal-id' => 'user-modal' }) %>
 </span>
 
-<div id="recipe-options-modal" class="reveal-modal" data-reveal>
+<div id="recipe-options-modal" class="reveal-modal small" data-reveal>
   <h2 class="page-title"></h2>
   <%=yield :recipe_options %>
   <a class="close-reveal-modal">&#215;</a>

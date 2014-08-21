@@ -2,15 +2,12 @@
 <div class="row" id="index-partial">
   <div class="large-12 large-centered columns">
     <%if @user == current_user%>
-    <h2 class="recipe-link">Recipes told by you</h2>
+    <h2 class="recipe-link">Recipes by you</h2>
   <%else%>
-    <h2 class="recipe-link">Recipes told by <%=@user.name%></h2>
+    <h2 class="recipe-link">Recipes by <%=@user.name%></h2>
   <%end%>
   <%= render :partial => 'recipes/recipes', :object => @user.recipes%>
   </div>
   </div>
 
 <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
