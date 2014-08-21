@@ -1,13 +1,8 @@
 <div class="row">
   <div class="large-6 large-centered columns">
-    <dl class="accordion" data-accordion>
-      <dd class="accordion-navigation about">
-<a href="#panel4">New</a>
-<div id="panel4" class="content active">
 
-    <%= link_to "Make a New Potluck", '#', data: {:'reveal-id' => 'potluck-modal'}, class:'recipe-link c-o' %>
-</div>
-</dd>
+    <%= link_to "Make a New Potluck", '#', data: {:'reveal-id' => 'potluck-modal'}, class:'button expand' %>
+    <dl class="accordion" data-accordion>
 
 <dd class="accordion-navigation about">
 <a href="#panel1" class:'recipe-pic'>Potlucks You're Organizing</a>
@@ -35,7 +30,8 @@
   <%@potlucks.each do |potluck|%>
     <%if potluck.invitees?%>
       <%if potluck.invitees.include? current_user.email%>
-        <%=link_to potluck.name, potluck_path(potluck)%>
+        <%=link_to potluck.name, potluck_path(potluck), class:'recipe-link text-link'%>
+        <br>
       <%end%>
     <%end%>
   <%end%>

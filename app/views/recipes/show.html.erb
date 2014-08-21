@@ -42,11 +42,13 @@
   <%=@recipe.yield%>
 </div>
 </div>
-
-<%= button_to "Email Grocery List", send_email_recipe_path, class: "button email" %>
-<%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
-<br>
-
+  <div class="large-3 large-left columns list-email">
+       <%= form_tag send_email_recipe_path do%>
+         <h3 class="recipe-link">Email this list</h3>
+        <%= email_field_tag :email, nil, placeholder: "where to?"%>
+        <%=submit_tag "Email List!", class: "tiny button radius" %>
+      <%end%>
+    </div>
 
 
 <div id="add-cookbook-modal" class="reveal-modal" data-reveal>
@@ -77,7 +79,7 @@
 </div>
 
 <%content_for :recipe_options do%>
-    <%= render partial: 'recipe_options'%>
+    <%= render partial: 'show_recipe_options'%>
  <%end%>
 
  <%content_for :cookbook_options do%>
@@ -89,7 +91,7 @@
 <%end%>
 
 <%content_for :settings_options do%>
-   <% render partial: 'recipes/show_recipe_options'%>
+   <% render partial: 'users/in_options'%>
 <%end%>
 
 

@@ -30,8 +30,13 @@ class RecipesController < ApplicationController
     if current_user
     @user = current_user
     @recipe = Recipe.find(params[:id])
-    ListMailer.groceries(@user, @recipe, @user.email).deliver
-    redirect_to @user, notice: "Email sent"
+    @email = params[:email]
+    if @email.empty?
+     redirect_to @recipe, notice: "Please enter an email address"
+    else
+    ListMailer.groceries(@user, @recipe, @email).deliver
+    redirect_to @recipe, notice: "Email sent"
+    end
     end
   end
 
@@ -57,6 +62,8 @@ class RecipesController < ApplicationController
   def tags
     @tag = params[:tag]
     @recipes = Recipe.tagged_with(@tag).includes(:tags)
+    @potlucks = Potluck.all
+    @cookbook = Cookbook.all
   end
 
   # GET /recipes/1/edit

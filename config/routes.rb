@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 resources :cookbooks
-resources :users
+resources :users, except: :index
 resources :photos
 resources :recipes do
   get 'tags/:tag' => 'recipes#tags', :on => :collection, :as => :tag

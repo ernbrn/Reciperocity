@@ -7,6 +7,8 @@ class CookbooksController < ApplicationController
 
   def show
     @recipes = @cookbook.recipes
+    @cookbooks = Cookbook.all
+    @potlucks = Potluck.all
   end
 
   def new
