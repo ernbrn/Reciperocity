@@ -30,8 +30,20 @@ class CookbooksController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @cookbook.update(cookbook_params)
+        format.html { redirect_to @cookbook, notice: 'Recipe was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+
   def destroy
     @cookbook.destroy
+    redirect_to root_url, notice: "Cookbook Deleted"
   end
 
   private

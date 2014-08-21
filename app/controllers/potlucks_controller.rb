@@ -36,8 +36,8 @@ class PotlucksController < ApplicationController
   end
 
   def destroy
-    @potluck.destoy
-    redirect_to potlucks_url, notice: "Potluck was sucessfully removed"
+    @potluck.destroy
+    redirect_to root_url, notice: "Potluck was sucessfully removed"
   end
 
   def attend

@@ -1,10 +1,18 @@
 <div class="row">
   <div class="large-6 large-centered columns r-o">
   <%if current_user == @recipe.user %>
-<%= link_to 'Edit This Recipe', edit_recipe_path(@recipe), class:"button expand" %>
+    <%= link_to 'Edit This Recipe', '#', data: {:'reveal-id'=> 'edit-recipe-modal'}, class:"button expand" %>
 <%end%>
 <%= link_to "Variate This Recipe", clone_recipe_path, class:"button expand" %>
 <%=link_to "Delete This Recipe", @recipe, method: :delete, data: { confirm: 'Diamonds are forever. So is this. Are you sure?' }, class:'button expand alert'%>
 <%=link_to 'Your Recipes', user_path(current_user), class:'button expand'%>
 </div>
- </div>
+</div>
+
+<div id="edit-recipe-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">Edit Recipe</h2>
+  <%= render partial: 'recipes/form', object: @recipe%>
+  <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+
