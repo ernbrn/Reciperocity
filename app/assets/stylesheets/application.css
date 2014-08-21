@@ -63,7 +63,7 @@
   height:65px;
 }
 .loggedout{
-  background-image:image-url("grapefruit3.jpg");
+  background-image:asset-url("grapefruit3.jpg");
   background-size: cover;
 }
 .bubble{
