@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Reciperocity" %></title>
       <%if notice%>
-    <div data-alert class="large-4 large-centered columns alert-box top-thing">
+    <div data-alert class="large-4 large-centered columns alert-box secondary top-thing">
     <p class="noticed notice:"><%= notice %></p>
       <a href="#" class="close">&times;</a>
   </div>
@@ -35,13 +35,10 @@
     <div class="side-icons">
 
  <span data-tooltip class="tip-right" id="newrecipe" title="Recipes">
-   <a href="#" data-options="align:right" data-dropdown="drop"><%=image_tag 'recipe.png'%></a>
-   <ul id="drop" class="large content f-dropdown" data-dropdown-content>
-     <%=render partial: 'recipes/recipe_options'%>
-   </ul>
+<%= link_to (image_tag 'recipe.png', class: "potluckpic"), '#', class:'potluckpic', data: {:'reveal-id'=>'recipe-options-modal' } %>
     </span>
 
-    <span data-tooltip class="tip-right" title="Cookbooks">
+        <span data-tooltip class="tip-right" title="Cookbooks">
 <%= link_to (image_tag 'cookbookw.png', class: "potluckpic",id:'cookbook'), '#', class:'potluckpic', data: {:'reveal-id'=>'cookbook-options-modal' } %>
       </span>
       <span data-tooltip class="tip-right" id="pot" title="Potlucks">
@@ -53,25 +50,25 @@
 </span>
 
 <div id="recipe-options-modal" class="reveal-modal small" data-reveal>
-  <h2 class="page-title"></h2>
+  <h2 class="page-title">Recipes</h2>
   <%=yield :recipe_options %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-<div id="cookbook-options-modal" class="reveal-modal" data-reveal>
-  <h2 class="page-title"></h2>
+<div id="cookbook-options-modal" class="reveal-modal small" data-reveal>
+  <h2 class="page-title">Cookbooks</h2>
   <%= yield :cookbook_options %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
-<div id="user-modal" class="reveal-modal" data-reveal>
+<div id="user-modal" class="reveal-modal medium" data-reveal>
   <h2 class="page-title">You are signed in as <%=current_user.name %></h2>
    <%=yield :settings_options%>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
 
-<div id="potluck-options-modal" class="reveal-modal" data-reveal>
+<div id="potluck-options-modal" class="reveal-modal medium" data-reveal>
   <h2 class="page-title">Potlucks</h2>
   <%= yield :potluck_options %>
   <a class="close-reveal-modal">&#215;</a>

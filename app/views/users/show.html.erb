@@ -11,3 +11,22 @@
   </div>
 
 <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
+
+
+<%content_for :recipe_options do%>
+    <%= render partial: 'recipes/recipe_options'%>
+ <%end%>
+
+ <%content_for :cookbook_options do%>
+   <%=render partial: 'cookbooks/cookbook_options'%>
+<%end%>
+
+<%content_for :potluck_options do%>
+  <%= render partial: 'potlucks/potluck_options'%>
+<%end%>
+
+<%content_for :settings_options do%>
+   <% render partial: 'users/in_options'%>
+<%end%>
+
+

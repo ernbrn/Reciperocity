@@ -10,6 +10,9 @@ class PotlucksController < ApplicationController
 
   def show
     @organizer = @potluck.potluck_signups.first.user
+    @cookbooks = Cookbook.all
+    @potlucks = Potluck.all
+    @recipes = @potluck.recipes
   end
 
   def new

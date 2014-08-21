@@ -38,8 +38,10 @@
   bottom: 67px;
 }
 .custom-label-class {
-    background: powderblue;
-    -webkit-border-radius: 20%;
+    background: #E3E3E3;
+    -webkit-border-radius: 5%;
+    padding:2px;
+    margin: 3px;
 }
 #tag{
     color: black;
@@ -51,10 +53,11 @@
 .recipe-link{
   font-family: 'Amatic SC', cursive;
   color: #0078a0;
+  font-size: 35px;
 }
 .noticed{
   text-align: center;
-  font-size: 25px;
+  font-size: 15px;
 }
 .top-thing{
   height:65px;
@@ -91,10 +94,19 @@
 #login-whole{
   position:relative;
   top:40px;
+  right: 35px;
 }
 #bf{
   font-family: 'Satisfy';
   font-size: 25px;
 }
+.dropit{
+  font-size:20px;
+}
 
-
+.list-email{
+  position:relative;
+  left: 100px;
+  bottom: 100px;
+  margin: 100px;
+}

@@ -1,2 +1,7 @@
-<li> <%=link_to "Make a new Recipe", '#', data: {:'reveal-id' => 'recipe-modal'}%></li>
-<li>  <%=link_to 'Your Recipes', user_path(current_user)%></li>
+<div class="row">
+  <div class="large-4 large-centered columns">
+ <%=link_to "New", '#', data: {:'reveal-id' => 'recipe-modal'}, class:'button expand'%>
+ <br>
+  <%=link_to 'Your Recipes', user_path(current_user), class:'button expand'%>
+</div>
+</div>

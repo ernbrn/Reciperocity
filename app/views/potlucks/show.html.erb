@@ -27,12 +27,11 @@
   <div class="row">
   <div class="large-6 columns large-right" id="recipe-block">
   <h1 class="recipe-link">Recipes attending:</h1>
-  <%@potluck.potluck_signups.each do |signup|%>
-    <%if signup.recipe%>
-    <%=signup.user.name%> is bringing
-    <%=link_to signup.recipe.dish_name, recipe_path(signup.recipe.id)%> <br>
-  <%end%>
-<%end%>
+  <%if @recipes.empty?%>
+    None yet!
+  <%else%>
+   <%= render :partial => 'recipes/recipes', :object => @recipes %>
+ <%end%>
   </div>
   </div>
 
@@ -52,4 +51,28 @@
     <br></h1>
 </div>
 </div>
+
+<%content_for :recipe_options do%>
+    <%= render partial: 'recipes/recipe_options'%>
+ <%end%>
+
+ <%content_for :cookbook_options do%>
+   <%=render partial: 'cookbooks/cookbook_options'%>
+<%end%>
+
+<%content_for :potluck_options do%>
+  <%= render partial: 'potlucks/potluck_options'%>
+<div class="row">
+  <div class="large-6 large-centered columns">
+  <%=link_to 'Delete This Potluck', @potluck, method: :delete, data: { confirm: "It would be Potunlucky if you didn't mean to do this. Are you sure?"}, class:'button expand alert' %>
+</div>
+</div>
+<%end%>
+
+<%content_for :settings_options do%>
+   <% render partial: 'users/in_options'%>
+<%end%>
+
+
+
       </body>

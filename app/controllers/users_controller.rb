@@ -7,13 +7,14 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     @authentications = current_user.authentications if current_user
+    @cookbooks= Cookbook.all
+    @potlucks = Potluck.all
   end
 
   # GET /users/new

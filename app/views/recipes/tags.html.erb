@@ -1,8 +1,24 @@
 <div class="row">
   <div class="medium-12 columns">
-<h3 class="page-title">Recipes tagged with "<%=@tag%>"</h3>
+<h3 class="page-title">Recipes under the category "<%=@tag%>"</h3>
 <%= render :partial => 'recipes', :object => @recipes %>
   </div>
 
-  <%= link_to content_tag(:i, nil, class:"fa fa-arrow-left fa-4x"), recipes_path, class:"toggles" %>
+<%content_for :recipe_options do%>
+    <%= render partial: 'recipes/recipe_options'%>
+ <%end%>
+
+ <%content_for :cookbook_options do%>
+   <%=render partial: 'cookbooks/cookbook_options'%>
+<%end%>
+
+<%content_for :potluck_options do%>
+  <%= render partial: 'potlucks/potluck_options'%>
+<%end%>
+
+<%content_for :settings_options do%>
+   <% render partial: 'users/in_options'%>
+<%end%>
+
+
 </div>
