@@ -1,7 +1,9 @@
 <body class="fonts">
   <%unless @organizer == current_user%>
  <%if current_user.potlucks.include? @potluck%>
+       <div class="large-6 large-centered columns"%>
         <h1 class="recipe-link">You are attending this Potluck!<br></h1>
+      </div>
       <%end%>
     <%end%>
 

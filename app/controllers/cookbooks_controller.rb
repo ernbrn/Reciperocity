@@ -33,7 +33,7 @@ class CookbooksController < ApplicationController
   def update
     respond_to do |format|
       if @cookbook.update(cookbook_params)
-        format.html { redirect_to @cookbook, notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to @cookbook, notice: 'Coookbook was successfully updated.' }
       else
         format.html { render :edit }
       end
