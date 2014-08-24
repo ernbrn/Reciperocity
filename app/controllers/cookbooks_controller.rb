@@ -9,6 +9,8 @@ class CookbooksController < ApplicationController
     @recipes = @cookbook.recipes
     @cookbooks = Cookbook.all
     @potlucks = Potluck.all
+    @newcookbook = Cookbook.new
+    @potluck = Potluck.new
   end
 
   def new

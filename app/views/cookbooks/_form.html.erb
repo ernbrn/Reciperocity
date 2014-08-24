@@ -1,17 +1,7 @@
 <body class="fonts">
 <div class="large-6 large-centered columns">
   <%= form_for(@cookbook) do |f| %>
-      <% if @cookbook.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@cookbook.errors.count, "error") %> prohibited this potluck from being saved:</h2>
 
-            <ul>
-              <% cookbook.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-      <% end %>
       <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>

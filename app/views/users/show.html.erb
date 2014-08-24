@@ -14,11 +14,13 @@
 
 
 <%content_for :recipe_options do%>
-    <%= render partial: 'recipes/recipe_options'%>
+  <div class="large-2 large-centered columns">
+<%=link_to "New", new_recipe_path, class: 'button' %>
+</div>
  <%end%>
 
  <%content_for :cookbook_options do%>
-   <%=render partial: 'cookbooks/cookbook_options'%>
+  <% render partial: 'cookbooks/cookbook_options'%>
 <%end%>
 
 <%content_for :potluck_options do%>
@@ -28,5 +30,17 @@
 <%content_for :settings_options do%>
    <% render partial: 'users/in_options'%>
 <%end%>
+
+<div id="cookbook-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Cookbook</h2>
+  <%= render partial: 'cookbooks/form', object: @cookbook%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="potluck-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Potluck</h2>
+  <%= render partial: 'potlucks/form', object: @potluck%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
 
 

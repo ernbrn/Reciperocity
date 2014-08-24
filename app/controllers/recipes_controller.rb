@@ -43,6 +43,10 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @potlucks = current_user.potlucks
+    @potluck = Potluck.new
+    @cookbook = Cookbook.new
+    @cookbooks = Cookbook.all
   end
 
   def clone

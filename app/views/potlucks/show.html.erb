@@ -63,7 +63,7 @@
 <%end%>
 
 <%content_for :potluck_options do%>
-  <%= render partial: 'potlucks/potluck_options'%>
+  <%= render partial: 'potlucks/po_show'%>
 <div class="row">
   <div class="large-6 large-centered columns">
   <%=link_to 'Delete This Potluck', @potluck, method: :delete, data: { confirm: "It would be Potunlucky if you didn't mean to do this. Are you sure?"}, class:'button expand alert' %>
@@ -74,6 +74,19 @@
 <%content_for :settings_options do%>
    <% render partial: 'users/in_options'%>
 <%end%>
+
+
+<div id="potluck-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Potluck</h2>
+  <%= render partial: 'potlucks/form', object: @newpotluck%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="cookbook-modal" class="reveal-modal" data-reveal>
+  <h2 class="page-title">New Cookbook</h2>
+  <%= render partial: 'cookbooks/form', object: @cookbook%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
 
 

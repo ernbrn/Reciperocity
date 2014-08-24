@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     @authentications = current_user.authentications if current_user
     @cookbooks= Cookbook.all
     @potlucks = Potluck.all
+    @cookbook = Cookbook.new
+    @potluck = Potluck.new
   end
 
   # GET /users/new
