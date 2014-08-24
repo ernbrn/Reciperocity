@@ -2,9 +2,9 @@
   <div class="large-6 large-centered columns r-o">
   <%if current_user == @recipe.user %>
     <%= link_to 'Edit This Recipe', '#', data: {:'reveal-id'=> 'edit-recipe-modal'}, class:"button expand" %>
+<%=link_to "Delete This Recipe", @recipe, method: :delete, data: { confirm: 'Diamonds are forever. So is this. Are you sure?' }, class:'button expand alert'%>
 <%end%>
 <%= link_to "Variate This Recipe", clone_recipe_path, class:"button expand" %>
-<%=link_to "Delete This Recipe", @recipe, method: :delete, data: { confirm: 'Diamonds are forever. So is this. Are you sure?' }, class:'button expand alert'%>
 <%=link_to 'Your Recipes', user_path(current_user), class:'button expand'%>
 </div>
 </div>
