@@ -11,6 +11,10 @@ everyone else is bringing. We brainstormed ways this simple app could take care 
 or for anyone else throwing any sort of potluck party. Reciperocity is now the solution. This site was built in 3 weeks
 and served as my Iron Yard final project.
 
+== To Start
+Click 'Sign Up'. Enter your name, email, and password. You will recieve an email confirmation, check your Spam folder if you
+do not recieve it within a couple of minutes.
+
 == On This Site You Can:
 
 ===Create Recipes
