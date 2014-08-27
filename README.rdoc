@@ -1,25 +1,40 @@
-== README
+= README
 
 Welcome to Receprocity!
 
-To start
-* Sign in (or up) by clicking on the little man.
-* If you have a Flickr log-in, you may log-in via that.
+www.reciperocity.co
+
+Reciperocity started as a very simple application that I created for an early homework assignment at 
+The Iron Yard. I shared it with my best friend, who throws an anual large-scale potluck party. She's 
+constantly frustrated with the amount of guests who every year ask her what they should bring, or what
+everyone else is bringing. We brainstormed ways this simple app could take care of all those logistics for her,
+or for anyone else throwing any sort of potluck party. Reciperocity is now the solution.
+
+== On This Site You Can:
+
+===Create Recipes
+Click the dish icon, and choose new recipe. Put each instruction on it's own line, each line
+becomes a bullet pointed item. Seperate tags by commas. If you don't choose to upload your own image, a placeholder is
+generated. 
+
+===Email any Recipe's Ingredient List to Anyone
+Find this feature on the recipe's main page. Perfect for sending someone else to the grocery store.
+
+===Fork a Recipe
+Make a variation on any recipe with the click of a button.
+
+===Create a Cookbook 
+Keep all your favorite recipes in one place. Add a recipe to your cook book on the recipe's main page by clicking 
+the cookbook icon on the sidebar
+
+===Create a Potluck
+Now that you have all your recipes on the site, it's time to start inviting your friends to your potluck party. Simply click
+on the pot icon on the sidebar and choose to start a new potluck. Choose a name and start inviting your friends. They will
+recive an email invitation with a link to your potluck with the option to join. From the recipe page, users can choose to add
+that recipe to any of the potlucks they're attending. All members of the potluck can view the dishes coming to the potluck in
+the Recipes Attending column. 
 
 
-When you sign up, an email will be sent for verificaiton. It will not be sent to your email -- use a mail
-catching service (such as MailCatcher) to catch this email. When you have caught it, click on the link inside
-and it will redirect you to Receprocity's homepage.
-
-If you wish for seed data run 
-  rake db:seed
-The User and Photos for these seeded recipes will be blank. Feel
-free to upload your own photos for them.
 
 
-To view authenticatons go to localhost/authentications (if you did not log in with Flickr, you can do so there)
-To view users go to localhost/users
-To view photo API hash go to localhost/photos
 
-
-Otherwise, add recipes to your heart's content!
