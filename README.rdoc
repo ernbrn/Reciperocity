@@ -8,7 +8,8 @@ Reciperocity started as a very simple application that I created for an early ho
 The Iron Yard. I shared it with my best friend, who throws an anual large-scale potluck party. She's 
 constantly frustrated with the amount of guests who every year ask her what they should bring, or what
 everyone else is bringing. We brainstormed ways this simple app could take care of all those logistics for her,
-or for anyone else throwing any sort of potluck party. Reciperocity is now the solution.
+or for anyone else throwing any sort of potluck party. Reciperocity is now the solution. This site was built in 3 weeks
+and served as my Iron Yard final project.
 
 == On This Site You Can:
 
